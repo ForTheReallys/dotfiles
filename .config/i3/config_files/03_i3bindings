@@ -1,0 +1,78 @@
+# i3bindings
+
+# A random font
+font pango: Monospace 8
+
+bar {
+    position top
+	i3bar_command ~/.i3/powerline_scripts/i3_powerline.sh &> /dev/null
+}
+
+# kill focused window
+bindsym $Alt+q kill
+
+# change focus
+bindsym $Alt+$left focus left
+bindsym $Alt+$down focus down
+bindsym $Alt+$up focus up
+bindsym $Alt+$right focus right
+
+# move focused window
+bindsym $Alt+Shift+$left move left
+bindsym $Alt+Shift+$down move down
+bindsym $Alt+Shift+$up move up
+bindsym $Alt+Shift+$right move right
+
+bindsym $Alt+n split v
+bindsym $Alt+v split h
+
+# enter fullscreen mode for the focused container
+bindsym $Alt+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $Alt+s layout stacking
+bindsym $Alt+t layout tabbed
+bindsym $Alt+e layout toggle split
+
+# toggle tiling / floating
+bindsym $Alt+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $Alt+space focus mode_toggle
+
+# cycle through workspaces on current output
+bindsym $Alt+Tab workspace next_on_output
+bindsym $Alt+Shift+Tab workspace prev_on_output
+bindsym $Alt+BackSpace workspace back_and_forth
+
+#cycle through all workspaces
+bindsym $Super+Tab workspace next
+bindsym $Super+Shift+Tab workspace prev
+
+# Scratchpad Stuff
+bindsym $Alt+Shift+a move scratchpad
+bindsym $Alt+a scratchpad show ; move position center
+
+# restart i3 in place (preserves your layout/session, can be used to upgrade i3)
+bindsym $Alt+Shift+r exec --no-startup-id "$script_dir/restart"
+
+# exit i3 (logs you out of your X session)
+bindsym $Alt+Shift+BackSpace exec --no-startup-id i3-msg exit
+
+# resizing windows
+bindsym $Alt+Control+$Left resize shrink width 1 px or 1 ppt
+bindsym $Alt+Control+$Right resize grow width 1 px or 1 ppt
+bindsym $Alt+Control+$Up resize shrink height 1 px or 1 ppt
+bindsym $Alt+Control+$Down resize grow height 1 px or 1 ppt
+
+# resize windows FASTER
+bindsym $Alt+Control+Shift+$Left resize shrink width 10 px or 10 ppt
+bindsym $Alt+Control+Shift+$Right resize grow width 10 px or 10 ppt
+bindsym $Alt+Control+Shift+$Up resize shrink height 10 px or 10 ppt
+bindsym $Alt+Control+Shift+$Down resize grow height 10 px or 10 ppt
+
+# resizing the GAPS for the current workspace
+bindsym $Alt+Control+i gaps inner current plus 5
+bindsym $Alt+Control+o gaps outer current plus 5
+bindsym $Alt+Control+Shift+i gaps inner current minus 5
+bindsym $Alt+Control+Shift+o gaps outer current minus 5

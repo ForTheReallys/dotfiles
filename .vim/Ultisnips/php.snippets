@@ -1,0 +1,32 @@
+extends html
+extends compiled
+
+snippet serv "PHP array vars" i
+$_SERVER['${1:${VISUAL:HTTP_USER_AGENT}}']
+endsnippet
+
+snippet post "Post array var" i
+$_POST['${1:${VISUAL}}']
+endsnippet
+
+snippet get "get array var" i
+$_GET['${1:${VISUAL}}']
+endsnippet
+
+snippet for "Simple for loop" b
+for ($${1:i} = 0; $$1 < ${2:10}; $$1++) {
+	${0://code}
+}
+endsnippet
+
+snippet fore "For Each" b
+foreach ($${1:array} as $${2:value}) {
+	${0:/*body*/}
+}
+endsnippet
+
+snippet function "Function definition" b
+function ${1:function_name}(${2:args}) {
+	${0:/*code*/}
+}
+endsnippet

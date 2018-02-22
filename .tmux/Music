@@ -1,0 +1,11 @@
+# specific options for my music session
+MUSIC_SESSION_NAME="Music"
+MUSIC_WINDOW_NAME="Music"
+MUSIC_PLAYER="cmus"
+
+new-session -d -s $MUSIC_SESSION_NAME -n $MUSIC_WINDOW_NAME $MUSIC_PLAYER
+# so it doesn't mess with my other sessions when I screw up in i3
+set -t $MUSIC_SESSION_NAME detach-on-destroy on
+set -t $MUSIC_SESSION_NAME set-titles off
+
+# vim: set filetype=tmux:

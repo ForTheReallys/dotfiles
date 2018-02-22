@@ -1,0 +1,29 @@
+# Apps
+
+# starting our applications
+bindsym $Super+c                exec $calc
+bindsym $Super+m                exec $term -T Music -e tmux attach-session -t Music
+bindsym $Super+Shift+c          exec $cal
+bindsym $Super+b                exec $CS
+bindsym $Super+Shift+Escape     exec $taskmgr
+bindsym $Super+a                exec $arandr
+bindsym $Super+s                exec $settings
+bindsym $Super+u                exec $term -e '~/bin/update' # updating our system
+bindsym $Super+p                workspace $work_office; exec $term -cd $LaTeX; exec $pdfviewer
+bindsym $Super+v                exec $virt
+# office applications
+bindsym $Super+Shift+o          exec $office
+bindsym $Super+Shift+w          exec $word
+bindsym $Super+Shift+p          exec $powerpoint
+bindsym $Super+Shift+e          exec $excel
+
+#only exceptions to the Alt and applications rule
+bindsym $Alt+Return exec --no-startup-id $term
+bindsym $Alt+Shift+Return exec $browser
+
+# start rofi (a program launcher)
+bindsym $Alt+d exec rofi -show run
+bindsym $Alt+w exec rofi -show window
+
+# find or start window
+bindsym $Alt+slash exec "rofi -modi combi -combi-modi 'window,drun' -show combi -display-combi '/' -display-window '' -display-drun '     '"

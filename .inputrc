@@ -1,0 +1,30 @@
+# Be 8 bit clean.
+set input-meta on
+set output-meta on
+
+# do not bell on tab-completion
+set bell-style none
+
+# add color to completion options
+set colored-stats on
+
+# Make it case insensitive (including - and _)
+set completion-ignore-case on
+set completion-map-case on
+
+# use vi-like bindings
+set editing-mode vi
+"\C-l": clear-screen
+
+set mark-symlinked-directories on
+set match-hidden-files off
+
+set show-all-if-ambiguous on
+Tab: menu-complete
+# shift tab in x terminals
+"\e[Z": menu-complete-backward
+
+set keymap vi-command
+"_": "^"
+set keymap vi-insert
+"\C-x\C-r": re-read-init-file

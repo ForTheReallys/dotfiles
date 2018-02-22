@@ -1,0 +1,51 @@
+# Workspaces
+
+# Assign workspaces to current output
+workspace $work_term output $main_output
+workspace $work_browser output $main_output
+workspace $work_CS output $main_output
+workspace $work_download output $main_output
+workspace $work_office output $main_output
+workspace $work_media output $main_output
+workspace $workspace7 output $main_output
+workspace $work_display output $main_output
+workspace $work_vm output $main_output
+workspace $work_random output $main_output
+# one workspace for another output
+workspace $work_output output $hdmi_output
+# switch to workspace
+bindsym $Alt+1 workspace $work_term
+bindsym $Alt+2 workspace $work_browser
+bindsym $Alt+3 workspace $work_CS
+bindsym $Alt+4 workspace $work_download
+bindsym $Alt+5 workspace $work_office
+bindsym $Alt+6 workspace $work_media
+bindsym $Alt+7 workspace $workspace7
+bindsym $Alt+8 workspace $work_display
+bindsym $Alt+9 workspace $work_vm
+bindsym $Alt+0 workspace $work_random
+# move focused container to workspace
+bindsym $Alt+Shift+1 move container to workspace $work_term
+bindsym $Alt+Shift+2 move container to workspace $work_browser
+bindsym $Alt+Shift+3 move container to workspace $work_CS
+bindsym $Alt+Shift+4 move container to workspace $work_download
+bindsym $Alt+Shift+5 move container to workspace $work_office
+bindsym $Alt+Shift+6 move container to workspace $work_media
+bindsym $Alt+Shift+7 move container to workspace $workspace7
+bindsym $Alt+Shift+8 move container to workspace $work_display
+bindsym $Alt+Shift+9 move container to workspace $work_vm
+bindsym $Alt+Shift+0 move container to workspace $work_random
+
+# output configuration
+# use alt and arrow keys to navigate outputs
+bindsym $Alt+Left move container to output left
+bindsym $Alt+Up move container to output up
+bindsym $Alt+Down move container to output down
+bindsym $Alt+Right move container to output right
+
+bindsym $Alt+Shift+Left move workspace to output left
+bindsym $Alt+Shift+Up move workspace to output up
+bindsym $Alt+Shift+Down move workspace to output down
+bindsym $Alt+Shift+Right move workspace to output right
+
+for_window [workspace=$workspace7] floating enable

@@ -1,0 +1,116 @@
+extends compiled
+
+snippet ver "@version <date>" w
+@version `!v strftime("%b-%d-%Y")`
+endsnippet
+
+snippet main "Main function" b
+public static void main(String[] args) {
+	${0:/*code*/}
+}
+endsnippet
+
+snippet maint "Main throws" b
+public static void main(String[] args) throws ${1:FileNotFoundException} {
+	${0:/*code*/}
+}
+endsnippet
+
+snippet abs "Math.abs"
+Math.abs($1)
+endsnippet
+
+snippet ill "IllegalArgumentException" w
+IllegalArgumentException
+endsnippet
+
+snippet null "NullPointerException" w
+NullPointerException
+endsnippet
+
+snippet outof "ArrayIndexOutOfBoundsException" w
+ArrayIndexOutOfBoundsException
+endsnippet
+
+snippet scan "New Scanner obj" b
+Scanner ${1:in} = new Scanner(${2:System.in});
+endsnippet
+
+snippet file "New File obj" b
+File ${1:inf} = new File("$2");
+endsnippet
+
+snippet sout "println" b
+System.out.println($0);
+endsnippet
+
+snippet printf
+System.out.printf("$1\n"$0);
+endsnippet
+
+snippet print "print a single line" b
+System.out.print($0);
+endsnippet
+
+snippet import "import" b
+import ${0:java.util.Scanner};
+endsnippet
+
+snippet util
+import java.util.${1:*};
+endsnippet
+
+snippet io
+import java.io.${1:*};
+endsnippet
+
+snippet ps "public static" b
+public static
+endsnippet
+
+snippet package "Package from root directory" b
+package `!v substitute(expand("%:h"), "/", ".", "g")`;
+endsnippet
+
+snippet class "Class declaration" b
+public class ${1:`!v expand("%:r")`} {
+	${0://code}
+}
+endsnippet
+
+snippet fori "Enhanced for loop" b
+for (${1:Integer} ${2:i} : ${3:range}) {
+	${0:/*code*/}
+}
+endsnippet
+
+# generic wrappers
+snippet Int "Generic Integer" w
+Integer
+endsnippet
+
+snippet Char "Generic Character" w
+Character
+endsnippet
+
+snippet Bool "Generic Boolean" w
+Boolean
+endsnippet
+
+snippet try "Try Block" b
+try {
+	${1:${VISUAL: \/\/code}}
+}
+endsnippet
+
+snippet catch "Catch exception" w
+catch (${1:Exception e}) {
+	${0://code}
+}
+endsnippet
+
+snippet sync "synchronized(semaphore)" b
+synchronized(${1:SEMAPHORE}) {
+	${0:${VISUAL:\/\/code}}
+}
+endsnippet

@@ -1,0 +1,66 @@
+snippet doc "doctype" b
+<!DOCTYPE ${1:html}>
+<html>
+	<body>
+		${0:<!-- code here -->}
+	</body>
+</html>
+endsnippet
+
+snippet t "Simple tag" b
+<${1:div}>
+	${0:${VISUAL:<!-- code here -->}}
+</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet T "single line tag"
+<${1:p}>${0:${VISUAL}}</${1/(\w+).*/$1/}>
+endsnippet
+
+snippet b "bold"
+<b>${1:Bold Text}</b>
+endsnippet
+
+snippet i "Italic"
+<i>${1:Italic Text}</i>
+endsnippet
+
+snippet sup "Super Script"
+<sup>${1:Superscript}</sup>
+endsnippet
+
+snippet sub "Subscript"
+<sub>${1:Subscript}</sub>
+endsnippet
+
+snippet und "Underline"
+<ins>${1:Underlined text}</ins>
+endsnippet
+
+snippet // "Comment"
+<!-- ${1:Comment Here} -->
+endsnippet
+
+snippet php "Start big php tag" b
+<?php
+	${VISUAL}
+?>
+endsnippet
+
+snippet p "Small php tag" w
+<?php ${VISUAL} ?>
+endsnippet
+
+snippet form "Form" b
+<form action="${1:${VISUAL:action.php}}" method="${2:get}">
+	${0:<!-- input here -->}
+</form>
+endsnippet
+
+snippet in "form input" w
+<input type=$1 name=$0 />
+endsnippet
+
+snippet br "break" w
+<br>
+endsnippet

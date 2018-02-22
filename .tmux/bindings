@@ -1,0 +1,65 @@
+###################
+# NORMAL BINDINGS #
+###################
+
+# Switch panes using keys from vim
+bind-key l select-pane -L
+bind-key h select-pane -R
+bind-key j select-pane -D
+bind-key k select-pane -U
+
+# Resize panes using keys from vim
+# NOTE when used with i3, enter insert mode (unbind all keys)
+bind-key -n M-l resize-pane -R # don't know why... it just is
+bind-key -n M-h resize-pane -L # don't know why... it just is
+bind-key -n M-j resize-pane -D
+bind-key -n M-k resize-pane -U
+
+# Swap panes using keys from vim
+bind-key J swap-pane -D
+bind-key K swap-pane -U
+
+# Create new panes
+bind-key n split-window -v -c "#{pane_current_path}" # horizontal split
+bind-key v split-window -h -c "#{pane_current_path}" # vertical split
+
+# The same thing as above but at 65% (for when I need a shell randomly)
+bind-key N split-window -v -c "#{pane_current_path}" -p 35 # horizontal split
+bind-key V split-window -h -c "#{pane_current_path}" -p 35 # vertical split
+
+bind-key -r C-K previous-window
+bind-key -r C-J next-window
+# TODO swap windows with C-H and C-L
+
+bind-key - last-window
+bind-key / command-prompt "find-window -N '%%'"
+bind-key q kill-window
+# Swap window with first in the session
+bind-key g swap-window -t 0
+
+# copy-mode related bindings
+bind-key C copy-mode
+bind-key p paste-buffer
+bind-key -T copy-mode-vi 'v' send-keys -X begin-selection
+bind-key -T copy-mode-vi 'y' send-keys -X copy-selection
+
+# Misc bindings
+bind-key ? list-keys
+bind-key s setw synchronize-panes
+bind-key i new-session
+bind-key S choose-session
+
+# toggle read only
+bind-key R switch-client -r
+# Reload the source file
+bind-key r source ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
+
+
+######################
+# COPY MODE BINDINGS #
+######################
+
+bind-key -T copy-mode-vi u send-keys -X halfpage-up
+bind-key -T copy-mode-vi d send-keys -X halfpage-down
+bind-key -T copy-mode-vi Space send-keys -X page-down
+# vim: set filetype=tmux:

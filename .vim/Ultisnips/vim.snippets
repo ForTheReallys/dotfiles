@@ -1,0 +1,37 @@
+snippet augroup "Augroup" b
+augroup ${1:Name}
+	autocmd!
+	$0
+augroup end
+endsnippet
+
+snippet if "If statement" b
+if ${1:"condition}
+	${0:${VISUAL:"code}}
+endif
+endsnippet
+
+snippet ife "If exists finish code block" b
+if exists("${1:g:loaded_`!v expand("%:t:r")`}")
+	finish
+endif
+let $1 = 1
+endsnippet
+
+snippet for "For loop" b
+for ${1:i} in ${2:"list/string}
+	${0:"code}
+endfor
+endsnippet
+
+snippet while "While loop" b
+while ${1:"1}
+	${0:"code}
+endwhile
+endsnippet
+
+snippet function "Declaring a new function" b
+function! ${1:Name}(${2})
+	${0:"code}
+endfunction
+endsnippet

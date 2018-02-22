@@ -1,0 +1,46 @@
+#!/bin/sh
+
+# All this program does is download a youtube video
+# converts it to mp3 and changes the name
+
+if [ $# -lt 2 ]
+then
+	echo "Usage: $0 Youtube_URL output_file"
+	exit 1
+fi
+
+cd ~/Music
+
+if [ -f "$2".mp3 ]
+then
+	echo 2>&1 "$2".mp3 already exists
+	exit 1
+fi
+
+	
+
+if [ $? -ne 0 ]
+then
+	exit $?
+fi
+
+if [ -z "$3" ] || [ "$3" = "worst" ]
+then
+	youtube-dl "$1" -x --audio-format mp3 -f worstaudio
+elif [ "$3" = "best" ]
+then
+	youtube-dl "$1" -x --audio-format mp3 -f bestaudio
+else
+	youtube-dl "$1" -x --audio-format mp3 -f bestaudio
+fi
+Title=$(ls -1c | head -1)
+
+mv "$Title"* "$2.mp3"
+which mp3info &> /dev/null
+
+# start an interactive prompt to set artist and other stuff
+if [ $? -eq 0 ]
+then
+	mp3info "$2.mp3" -t "$2"
+	mp3info "$2.mp3" -i
+fi

@@ -1,0 +1,20 @@
+snippet snip "New snippet" b
+snippet ${1:snippet} "${2:Description}" ${3:b}
+$0
+`!v expand("endsnippet")`
+endsnippet
+
+snippet global "Global Snippet" b
+global ${1:!p}
+$0
+endglobal
+endsnippet
+
+# when I decide something should be in a placeholder
+snippet pl "Placeholder" w
+${${1:1}:${2:${VISUAL:Default}}}
+endsnippet
+
+snippet con "Context" b
+context "${1:${VISUAL:python expression that returns true}}"
+endsnippet

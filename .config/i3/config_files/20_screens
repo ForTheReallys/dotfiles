@@ -1,0 +1,13 @@
+# screens
+
+# switching outputs
+bindsym Control+$Super+h focus output left
+bindsym Control+$Super+l focus output right
+bindsym Control+$Super+k focus output up
+bindsym Control+$Super+j focus output down
+
+# SUPER RARE to move workspaces to different outputs
+bindsym Control+$Super+Shift+h move workspace to output left
+bindsym Control+$Super+Shift+l move workspace to output right
+bindsym Control+$Super+Shift+k move workspace to output up
+bindsym Control+$Super+Shift+j move workspace to output down

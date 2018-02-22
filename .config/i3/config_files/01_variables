@@ -1,0 +1,57 @@
+# Variables
+
+# Mod Keys
+# Alt is used for i3 bindings (with the exception of the terminal and the browser)
+# Super is for application bindings (for the most part)
+set $Alt Mod1
+set $Super Mod4
+
+# floating modifier
+floating_modifier $Alt
+
+# Script directories
+set $script_dir ~/.i3/i3_scripts/
+
+# use these keys for focus, movement, and resize directions when reaching for
+# the arrows is not convenient
+set $up k
+set $down j
+set $left h
+set $right l
+
+# output options
+set $main_output eDP-1
+set $hdmi_output HDMI-1
+
+# Directory/files variables
+set $LaTeX ~/Documents/latex
+# application variables
+set $browser        qutebrowser
+set $term           st
+set $calc           gnome-calculator
+set $cal            gnome-calendar
+set $taskmgr        st -e htop
+set $CS             virtualbox --startvm 'Turnkey LAMP'
+set $arandr         arandr
+set $settings       gnome-control-center
+set $pdfviewer      evince
+set $virt           virtualbox
+set $filebrowser    ranger
+set $office         libreoffice
+set $word           playonlinux --run "Microsoft Word 2007"
+set $powerpoint     playonlinux --run "Microsoft Powerpoint 2007"
+set $excel          playonlinux --run "Microsoft Excel 2007"
+
+# workspace variables
+set $work_term      "1  "
+set $work_browser   "2  "
+set $work_CS        "3  "
+set $work_download  "4  "
+set $work_office    "5  "
+set $work_media     "6  "
+set $workspace7     "7  "
+set $work_display   "8  "
+set $work_vm        "9  "
+set $work_random    "10  "
+set $work_output    "11  "
+

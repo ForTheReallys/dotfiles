@@ -1,0 +1,16 @@
+snippet function "New function" b
+function ${1:name}() {
+	${0:# code}
+}
+endsnippet
+
+snippet if "Simple if" b
+if [[ $1 ]]; then
+	${0:# code}
+fi
+endsnippet
+
+snippet elif "Else if" b
+elif [[ $1 ]]; then
+	${0:# code}
+endsnippet

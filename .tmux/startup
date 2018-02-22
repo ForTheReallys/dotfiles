@@ -1,0 +1,3 @@
+new-session -s 0
+
+# vim: set filetype=tmux:

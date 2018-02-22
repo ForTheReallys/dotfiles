@@ -1,0 +1,57 @@
+[submodule ".vim/pack/bundle/opt/CompleteParameter.vim"]
+	path = .vim/pack/bundle/opt/CompleteParameter.vim
+	url = https://github.com/tenfyzhong/CompleteParameter.vim
+[submodule ".vim/pack/bundle/start/ack.vim"]
+	path = .vim/pack/bundle/start/ack.vim
+	url = https://github.com/mileszs/ack.vim.git
+[submodule ".vim/pack/bundle/start/AfterColors.vim"]
+	path = .vim/pack/bundle/start/AfterColors.vim
+	url = https://github.com/vim-scripts/AfterColors.vim.git
+[submodule ".vim/pack/bundle/start/auto-pairs"]
+	path = .vim/pack/bundle/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs.git
+[submodule ".vim/pack/bundle/start/command-t"]
+	path = .vim/pack/bundle/start/command-t
+	url = https://github.com/wincent/command-t.git
+[submodule ".vim/pack/bundle/start/nerdcommenter"]
+	path = .vim/pack/bundle/start/nerdcommenter
+	url = https://github.com/scrooloose/nerdcommenter.git
+[submodule ".vim/pack/bundle/start/nerdtree"]
+	path = .vim/pack/bundle/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule ".vim/pack/bundle/start/tagbar"]
+	path = .vim/pack/bundle/start/tagbar
+	url = https://github.com/majutsushi/tagbar.git
+[submodule ".vim/pack/bundle/start/ultisnips"]
+	path = .vim/pack/bundle/start/ultisnips
+	url = https://github.com/SirVer/ultisnips.git
+[submodule ".vim/pack/bundle/start/vim-javacomplete2"]
+	path = .vim/pack/bundle/opt/vim-javacomplete2
+	url = https://github.com/artur-shaik/vim-javacomplete2.git
+[submodule ".vim/pack/bundle/start/vim-latex-live-preview"]
+	path = .vim/pack/bundle/start/vim-latex-live-preview
+	url = https://github.com/xuhdev/vim-latex-live-preview.git
+[submodule ".vim/pack/bundle/start/vim-nerdtree-tabs"]
+	path = .vim/pack/bundle/start/vim-nerdtree-tabs
+	url = https://github.com/jistr/vim-nerdtree-tabs.git
+[submodule ".vim/pack/bundle/start/vim-skeletons"]
+	path = .vim/pack/bundle/start/vim-skeletons
+	url = https://github.com/pgilad/vim-skeletons.git
+[submodule ".vim/pack/bundle/start/vim-surround"]
+	path = .vim/pack/bundle/start/vim-surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule ".vim/pack/bundle/start/YouCompleteMe"]
+	path = .vim/pack/bundle/start/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule ".vim/pack/bundle/start/tabular"]
+	path = .vim/pack/bundle/start/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/pack/bundle/start/paste-indent"]
+	path = .vim/pack/bundle/start/paste-indent
+	url = https://github.com/ForTheReallys/paste-indent
+[submodule ".vim/pack/bundle/start/vim-solarized8"]
+	path = .vim/pack/bundle/start/vim-solarized8
+	url = https://github.com/lifepillar/vim-solarized8
+[submodule ".vim/pack/bundle/start/swift.vim"]
+	path = .vim/pack/bundle/start/swift.vim
+	url = https://github.com/keith/swift.vim

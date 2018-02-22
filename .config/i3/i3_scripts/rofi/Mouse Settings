@@ -1,0 +1,45 @@
+#!/bin/sh
+
+
+. ~/.i3/i3_scripts/toggle_input_settings
+
+prompt="Mouse Settings:"
+
+# $1 the output from toggle_input_settings the function 'get_setting'
+function humanize_for_rofi() {
+    if [[ $1 -eq 0 ]]; then
+        echo on
+    else
+        echo off
+    fi
+}
+
+
+natural_scrolling=$(humanize_for_rofi $(get_setting "Natural Scrolling"))
+disable_while_typing=$(humanize_for_rofi $(get_setting "Disable While Typing"))
+tapping=$(humanize_for_rofi $(get_setting "Tapping"))
+
+scrolling_output=$(printf "Turn %s 'Natural Scrolling'" $natural_scrolling)
+disable_output=$(printf "Turn %s 'Disable While Typing'" $disable_while_typing)
+tapping_output=$(printf "Turn %s 'Tapping'" $tapping)
+
+options=$(printf "%s|%s|%s" \
+    "$scrolling_output" \
+    "$disable_output" \
+    "$tapping_output")
+
+answer=$(rofi -p "$prompt" -dmenu -i -sep '|' <<< $options)
+
+case "$answer" in
+    "$scrolling_output")
+        toggle_setting "Natural Scrolling"
+        ;;
+    "$disable_output")
+        toggle_setting "Disable While Typing"
+        ;;
+    "$tapping_output")
+        toggle_setting "Tapping"
+        ;;
+    *)
+        ;;
+esac

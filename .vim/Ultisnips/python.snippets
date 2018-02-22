@@ -1,0 +1,66 @@
+global !p
+import my_ultisnips
+endglobal
+
+priority 1
+context "snip.line == 0"
+snippet #! "python shebang" b
+`!p my_ultisnips.shebang(snip)`
+endsnippet
+
+snippet main "Main function" b
+def main(${1}):
+	${0:pass}
+
+endsnippet
+
+snippet ifmain "if __main__" w
+if __name__ == '__main__':
+	${1:main()}
+endsnippet
+
+snippet error "write to stderr"
+sys.stderr.write(${1})
+endsnippet
+
+snippet def "New Function" b
+def ${1:function}(${2:args}):
+	${0:pass}
+endsnippet
+
+snippet imp "Import" b
+import ${1:random}
+endsnippet
+
+snippet from "From import" b
+from ${1:random} import ${2:*}
+endsnippet
+
+snippet class "Create a new class" b
+class ${1:ClassName}(${2:object}):
+	def __init__(self$3):
+		${3:pass}
+
+endsnippet
+
+snippet cmp "Comparisons" b
+def __add__(self, obj):
+	${1:pass}
+
+def __sub__(self, obj):
+	${2:pass}
+
+def __mul__(self, obj):
+	${3:pass}
+
+def __div__(self, obj):
+	${4:pass}
+endsnippet
+
+snippet str "str(Visual)"
+str(${VISUAL})
+endsnippet
+
+snippet int "int(Visual)"
+int(${VISUAL})
+endsnippet

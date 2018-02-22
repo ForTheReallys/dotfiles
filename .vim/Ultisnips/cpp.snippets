@@ -1,0 +1,18 @@
+extends c
+
+snippet template "Template"
+template <typename ${1:T}>
+endsnippet
+
+snippet class "class" b
+class ${1:`!v expand("%:t:r")`} {
+public:
+	$0
+	${1/(\w+).*/$1/}();
+	~${1/(\w+).*/$1/}();
+};
+endsnippet
+
+snippet using "std" b
+using namespace ${1:std};
+endsnippet

@@ -1,0 +1,69 @@
+#!/bin/sh
+
+# Rofi script to run other rofi scripts.  It scans the directory 'rofi_dir'
+# and gives the option to run those rofi scripts.  In addition, I've added
+# a nice little feature that allows custom hard coded entries either before
+# or after the script entries.  For instance, if I wanted to have the option
+# to show the 'run' mode I could do that.
+
+# All you'd have to do is add some entries to either the 'before' or 'after'
+# variables (separated by '|'s) and write a function that corresponds with the
+# entry name.  NOTE entries can not contain a '|' or whitespace with the
+# exception of spaces.  If the entry contains a space, replace the space with
+# an underscore within the function name.  NOTE, the 'before' string MUST end
+# with a '|' but the 'after' string should not begin with a '|'.  This is
+# handled inside the 'after' string and the script loop
+
+# Good Luck and have fun
+
+prompt="Rofi:"
+rofi_dir=$HOME/.i3/i3_scripts/rofi
+
+before="Run|Select Windows|"
+after=""
+
+# my two functions for my 'before' string
+function Run() {
+    rofi -show run
+}
+function Select_Windows() {
+    rofi -show window
+}
+
+# used to find the appropriate function based on the rofi selection
+function find_function() {
+    sed 's/\s/_/g' <<< $1
+}
+
+# look through our script dir and build the string to pass to rofi
+scripts=""
+if [ -d "$rofi_dir" ]; then
+    oldifs="$IFS"
+    IFS='|'
+
+    for i in $(ls "$rofi_dir" | tr '\n' '|')
+    do
+        scripts="$scripts$(basename $i)|"
+    done
+
+    IFS="$oldifs"
+fi
+
+options=${before}${scripts}${after}
+# don't even continue if there are no choices
+if [ -z "$options" ]; then
+    exit 1
+fi
+
+selection=$(echo -n "$options" | rofi -p "$prompt" -dmenu -i -sep '|')
+# if canceled, do nothing
+if [ -z "$selection" ]; then
+    exit 1
+# if not a script
+elif [ ! -e "$rofi_dir/$selection" ]; then
+    func=$(find_function "$selection")
+    "$func"
+# Assume it's a script
+else
+    "$rofi_dir/$selection"
+fi

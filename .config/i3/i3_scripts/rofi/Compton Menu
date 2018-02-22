@@ -1,0 +1,53 @@
+#!/bin/sh
+
+prompt="Compton Menu:"
+
+# returns 0 if compton is not running
+# returns 1 if dim is active
+# returns 2 if dim is inactive
+function compton_status() {
+    cmd=$(pgrep compton -a | cut -d' ' -f2-)
+    if [ -z $cmd ]; then
+        return 0
+    fi
+
+    grep "dim" <<< "$cmd"
+    if [ $? -eq 0 ]; then
+        return 1
+    fi
+
+    return 2
+}
+
+function compton_off() {
+    killall compton
+}
+
+function compton_toggle_dim() {
+
+}
+
+function interactive() {
+    compton_status
+    compton_state=$?
+
+
+}
+
+if [ -z "$1" ]; then
+    interactive
+else
+    case "$1" in
+        "off")
+            compton_off
+            ;;
+        "dim")
+            compton_dim
+            ;;
+        "nodim")
+            compton_nodim
+            ;;
+        *)
+            echo "Bad option"
+    esac
+fi

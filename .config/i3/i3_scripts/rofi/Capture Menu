@@ -1,0 +1,80 @@
+#!/bin/sh
+
+prompt="Capture Methods:"
+
+function my_screenkey() {
+    pid=$(pgrep ^screenkey$)
+
+    if [ "$1" = "-q" ]; then
+        # return on if screenkey is off
+        # fed into rofi as "Turn screenkey (on|off)"
+        if [ -z "$pid" ]; then
+            echo on
+        else
+            echo off
+        fi
+
+        return
+    fi
+
+    if [ -z "$pid" ]; then
+        screenkey
+    else
+        killall screenkey
+    fi
+}
+
+function snap_window() {
+    scrot --focused -q 100 -ze 'mv $f ~/Pictures/Screenshots'
+}
+
+function snap_screen() {
+    scrot  -q 100 -ze 'mv $f ~/Pictures/Screenshots'
+}
+
+function interactive() {
+    screenkey_state=$(my_screenkey -q)
+
+    scrot_output="Screenshot"
+    scrot_window_output="Screenshot window"
+    screenkey_output=$(printf "Turn screenkey %s" $screenkey_state)
+
+    options=$(printf "%s|%s|%s" \
+        "$scrot_output" \
+        "$scrot_window_output" \
+        "$screenkey_output")
+
+    answer=$(rofi -p "$prompt" -i -dmenu -i -sep '|' <<< $options)
+
+    case "$answer" in
+        "$scrot_output")
+            snap_screen
+            ;;
+        "$scrot_window_output")
+            snap_window
+            ;;
+        "$screenkey_output")
+            my_screenkey
+            ;;
+        *)
+            ;;
+    esac
+}
+
+if [ -z "$1" ]; then
+    interactive
+else
+    case "$1" in
+        "screenkey")
+            my_screenkey
+            ;;
+        "snap-window")
+            scrot_window
+            ;;
+        "snap-screen")
+            scrot_screen
+            ;;
+        *)
+            echo "Bad option"
+    esac
+fi

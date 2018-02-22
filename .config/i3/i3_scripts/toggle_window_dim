@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# our original compton command
+COMPTON_NODIM="compton -b --no-fading-openclose"
+COMPTON_DIM="$COMPTON_NODIM --inactive-dim 0.6"
+
+PID=$(pgrep compton)
+# if compton not running, start it with dim
+if [ -z "$PID" ]; then
+	$COMPTON_DIM
+else
+	pgrep compton -a | grep dim &> /dev/null
+	DIM=$?
+
+	kill $PID
+	if [ $DIM -eq 0 ]; then
+		$COMPTON_NODIM
+	fi
+fi
+

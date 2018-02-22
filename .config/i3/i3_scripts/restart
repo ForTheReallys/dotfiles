@@ -1,0 +1,20 @@
+#!/bin/sh
+
+CONFIG_FILE="$HOME/.i3/config"
+CONFIG_DIR="$HOME/.i3/config_files"
+BACKUP=$CONFIG_FILE.backup
+
+cd $CONFIG_DIR
+
+if [ $? -eq 1 ]
+then
+    echo "Could not find config directory"
+    exit 1
+fi
+
+if [[ -e $CONFIG_FILE ]]; then
+	mv $CONFIG_FILE $BACKUP
+fi
+
+cat * > $CONFIG_FILE
+i3-msg restart

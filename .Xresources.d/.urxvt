@@ -1,0 +1,24 @@
+urxvt*depth:        32
+urxvt*background:   [80]#000000
+urxvt*foreground:   White
+urxvt*scrollBar:    false
+
+urxvt*font:             xft:DroidSansMono\ Nerd\ Font:size=11
+urxvt*boldFont:         xft:DroidSansMono\ Nerd\ Font:bold:size=11
+urxvt*italicFont:       xft:DejaVuSansMono\ Nerd\ Font:style=Oblique:size=11
+urxvt*boldItalicFont:   xft:DejaVuSansMono\ Nerd\ Font:style=Bold Oblique:size=11
+
+urxvt*perl-ext-common:             color-themes,font-size
+urxvt*color-themes.themedir:       ~/.urxvt/themes
+urxvt*color-themes.autosave:       0
+urxvt*color-themes.preprocessor:   /usr/bin/cpp
+
+! keybindings
+*rxvt*keysym.C-Right:   perl:color-themes:next
+*rxvt*keysym.C-Left:    perl:color-themes:prev
+
+urxvt*keysym.C-equal:    perl:font-size:increase
+urxvt*keysym.C-minus:    perl:font-size:decrease
+urxvt*keysym.C-Return:   perl:font-size:reset
+
+! vim: set filetype=xdefaults:

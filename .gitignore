@@ -1,0 +1,11 @@
+*.swp
+.config/i3/config
+.config/i3/config.backup
+.vim/spell/*
+.vim/view/*
+.vim/Ultisnips/all*
+.vim/Ultisnips/mail*
+.vim/Ultisnips/private/*
+.vim/pythonx/__pycache__/my_ultisnips.cpython-36.pyc
+.vim/*.swp
+.vim/.netrwhist

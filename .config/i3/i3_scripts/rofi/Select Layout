@@ -1,0 +1,29 @@
+#!/bin/sh
+
+prompt="Select Layout:"
+layoutdir=$HOME/.screenlayout
+if [ ! -d $layoutdir ]; then
+    exit 1
+fi
+
+layouts=""
+oldifs="$IFS"
+IFS='|'
+for i in $(ls $layoutdir/*.sh | sed -e 's/\.sh$//' | tr '\n' '|')
+do
+    layouts="$layouts$(basename $i)|"
+done
+IFS="$oldifs"
+
+if [ -z "$layouts" ]; then
+    exit 1
+fi
+
+
+selection=$(echo -n "$layouts" | rofi -p "$prompt" -dmenu -i -sep '|')
+if [ -z "$selection" ]; then
+    exit 1
+fi
+
+"$layoutdir/$selection".sh
+i3-msg restart

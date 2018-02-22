@@ -1,0 +1,16 @@
+set default-terminal tmux-256color
+set -ga terminal-overrides ",st*:Tc"
+set -g escape-time 0
+set -g display-time 2000
+set -g prefix C-Space
+
+set -g mouse on
+set -g detach-on-destroy off
+set -g renumber-windows on
+set -g set-titles on
+
+# make copy-mode like vim
+set -g mode-keys vi
+set -g xterm-keys on
+
+# vim: set filetype=tmux:

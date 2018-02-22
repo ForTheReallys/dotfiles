@@ -1,0 +1,27 @@
+! default theme
+
+! a transparent background
+*depth: 32
+!*background: rgba:0000/0000/0200/c800
+*background: [80]#000000
+*foreground: White
+*cursorColor:White
+
+*color0:     Black
+*color1:     Red3
+*color2:     Green3
+*color3:     Yellow3
+*color4:     Blue3
+*color5:     Magenta3
+*color6:     Cyan3
+*color7:     AntiqueWhite
+*color8:     Grey25
+*color9:     Red
+*color10:    Green
+*color11:    Yellow
+*color12:    Blue
+*color13:    Magenta
+*color14:    Cyan
+*color15:    White
+
+! vim: noswapfile expandtab filetype=xdefaults:

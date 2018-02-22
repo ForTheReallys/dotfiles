@@ -1,0 +1,16 @@
+{
+    "groups": {
+        "w_visible":        "workspace",
+        "workspace":        {"fg": "gray70",    "bg": "gray2",       "attrs": []},
+        "w_focused":        {"fg": "white",     "bg": "darkblue",    "attrs": []},
+        "w_urgent":         {"fg": "white",     "bg": "red",         "attrs": []},
+        "mode":             {"fg": "white",     "bg": "red",         "attrs": []},
+        "battery_gradient": {"fg": "white",     "bg": "blue_red",    "attrs": []},
+        "battery_online":   {"fg": "red",       "bg": "yellow",      "attrs": []},
+        "brightness":       {"fg": "white",     "bg": "darkblue",    "attrs": []},
+        "battery":          {"fg": "white",     "bg": "darkestblue", "attrs": []},
+        "background":       "information:regular",
+        "volume":           {"fg": "white",     "bg": "green",       "attrs": []},
+        "screenkey":        {"fg": "white",     "bg": "gray2",       "attrs": []}
+    }
+}

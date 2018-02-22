@@ -1,0 +1,27 @@
+#!/bin/sh
+
+# to be used with libinput
+touchpad="ETPS/2 Elantech Touchpad"
+
+# Get any current setting
+# $1: the setting to be searched
+get_setting() {
+	search_string="libinput $1 Enabled ("
+	xinput --list-props "$touchpad" | grep -i "$search_string" | cut -d: -f2
+}
+
+toggle_setting() {
+	param="libinput $1 Enabled"
+	option=$(get_setting "$1")
+	if [ "$option" -eq 0 ]; then
+		option=1
+	else
+		option=0
+	fi
+
+	xinput set-prop "$touchpad" "$param" $option
+}
+
+if [ ! -z "$1" ]; then
+    toggle_setting "$1"
+fi

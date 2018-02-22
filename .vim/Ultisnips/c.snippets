@@ -1,0 +1,71 @@
+extends compiled
+
+snippet ret "Return" b
+return ${1:0};
+endsnippet
+
+snippet main "Main function" b
+int main (${1:int argc, char **argv})
+{
+	${0:${VISUAL:\/\/code}}
+}
+endsnippet
+
+snippet long "Define long options" b
+static struct option ${1:long_opts}[] {
+	{$0},
+};
+
+endsnippet
+
+snippet getopt "Getopt loop" b
+while ((${1:c} = getopt(argc, argv, "$2")) != -1) {
+	switch (${1:/*option letter*/}) {
+		${0:${VISUAL:\/\/code}}
+	}
+}
+endsnippet
+
+snippet glong "Getopt long loop" b
+while ((${1:c} = getopt_long(argc, argv, "$2", ${3:long_opts}, ${4:NULL})) != -1) {
+	switch (${1:/*option letter */}) {
+		${0:${VISUAL:\/\/code}}
+	}
+}
+endsnippet
+
+snippet inc "Include any header" b
+#include <${1:stdio.h}>
+endsnippet
+
+snippet def "#define" b
+#define ${1:DEFAULT}
+endsnippet
+
+# Don't want to include cpp files
+snippet Inc "Include this header" b
+#include "${0:`!v expand("%:t:r")".h"`}"
+endsnippet
+
+snippet once "Header wrappers" b
+#ifndef ${1:`!v toupper(expand("%:t:r")"_H")`}
+#define $1
+
+$0
+
+#endif /* end of include guard: $1 */
+endsnippet
+
+snippet "print." "snippet to cover printf type functions" r
+`!p snip.rv = match.group(0)`("${1:%s}\\n"$0);
+endsnippet
+
+snippet fpr "fprintf" b
+fprintf(${1:stderr}, "${2:%s}\n"$0);
+endsnippet
+
+snippet struct "struct" b
+struct ${1:MyStruct} {
+	${0:${VISUAL:\/\/code}}
+};
+endsnippet

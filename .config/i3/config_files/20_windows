@@ -1,0 +1,54 @@
+# Windows
+
+# assigning programs to workspaces
+
+# browsers
+assign [class="^Google-chrome"] $work_browser
+assign [class="^qutebrowser$"] $work_browser
+assign [class="^Chromium$"] $work_browser
+# virtual machines
+assign [class="^VirtualBox$"] $work_vm
+# Computer Science
+assign [class="^NetBeans"] $work_CS
+# Settings
+assign [class="^Arandr$"] $work_display
+assign [class="^Gnome-control-center$"] $work_display
+assign [class="^Pavucontrol$"] $work_display
+# updates
+assign [class="URxvt" title="update"] $work_download
+# Office
+assign [instance="^libreoffice$"] $work_office
+assign [instance="^WINWORD.EXE$"] $work_office
+assign [instance="^POWERPNT.EXE$"] $work_office
+assign [instance="^EXCEL.EXE$"] $work_office
+assign [instance="SETUP.EXE" title="^Microsoft Office"] $work_office
+assign [class="^Evince$"] $work_office
+
+# settings for certain types of windows
+for_window [class="feh"] floating enable
+for_window [class="^Gnome-calendar$"] floating enable
+for_window [class="^Nautilus$"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="^GtkFileChooserDialog$"] resize set 640 480
+for_window [title="VirtualBox$"] floating enable
+for_window [tiling] border none
+for_window [floating] move position center
+
+# settings for workspaces
+for_window[workspace=$work_browser] layout tabbed
+
+# specific window settings
+
+# music settings
+for_window[title="^Music$"] floating enable
+for_window[title="^Music$"] move scratchpad
+for_window[title="^Music$"] sticky enable
+
+# computer science
+for_window[title="^Turnkey"] move scratchpad
+for_window[title="^Turnkey"] resize set 345 110
+
+# gvim
+for_window [class="^Gvim$"] floating enable # used mainly as scratchpad for qutebrowser
+for_window [class="^Gvim$"] resize set 640 480
+for_window [class="^Gvim$"] move position center

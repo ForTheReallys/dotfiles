@@ -1,0 +1,34 @@
+cd ~/Music
+set start_view=browser
+
+# browser bindings
+bind -f browser m cd ~/Music
+bind -f browser p cd ~/Podcasts
+
+# playlist bindings
+bind -f playlist a push pl-create 
+
+# common bindings
+bind -f common w player-next
+bind -f common b player-prev
+bind -f common S source ~/.config/cmus/rc
+# this is a zero
+bind -f common 0 seek 0
+
+# use alsa
+set output_plugin=alsa
+set dsp.alsa.device=default
+set mixer.alsa.device=default
+set mixer.alsa.channel=Master
+
+# repeat one
+set repeat_current=true
+
+# format string for playlists: title and artist
+set format_playlist= %-50%t %-50%{?a?%a?Unknown} %= %-3X
+set altformat_playlist= %F
+
+set format_current= %a - %t%= %y 
+
+# nice looking colorscheme
+colorscheme night

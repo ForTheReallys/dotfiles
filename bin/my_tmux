@@ -1,0 +1,20 @@
+#!/bin/sh
+
+# a better alias than 'tmux a'.  if no arguments are given, then
+# attach if not inside tmux.  If there are arguments, pass them to tmux
+function tmux_cmd() {
+    tmux "$@"
+}
+
+# start and attach (or just attach if running) if a valid tty
+function attach() {
+    if [ -z "$TMUX" ]; then
+        tmux a
+    fi
+}
+
+if [ ! -z "$1" ]; then
+    tmux_cmd "$@"
+else
+    attach
+fi

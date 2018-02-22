@@ -1,0 +1,20 @@
+# Sys
+
+# Pulse Audio volume controls
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound
+bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound
+bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute
+
+# Sreen brightness controls
+# NOTE...  this is MY xbacklight script.  It uses the roughly the same options including
+# inc, dec, set, and get so it can be used here and with the status bar
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease brightness
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 10 # increase brightness slightly
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 10 # decrease brightness slightly
+
+# lock screen
+# TODO
+# bindsym F9 exec "cmus-remote --pause-playback" \; exec i3lock -c 000000 && systemctl suspend
+bindsym F9 exec i3lock -c 000000 && systemctl suspend
+
