@@ -44,6 +44,7 @@ endif
 
 if has("wildmenu")
 	set wildmenu                        "Enable tab completion in the command line}
+	set wildignorecase                  "ignore case when expanding filenames
 endif
 
 if has("cmdline_info")
