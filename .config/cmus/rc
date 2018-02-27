@@ -4,6 +4,7 @@ set start_view=browser
 # browser bindings
 bind -f browser m cd ~/Music
 bind -f browser p cd ~/Podcasts
+bind -f browser A add -l .
 
 # playlist bindings
 bind -f playlist a push pl-create 
