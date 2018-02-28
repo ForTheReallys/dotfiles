@@ -5,7 +5,7 @@ rofi.show:                          run
 rofi.color-normal:                  #00001100,#ffffff,#00000011,#ffffff,#000000
 rofi.color-urgent:                  #00001100,#ffffff,#00000011,#ffffff,#000000
 rofi.color-active:                  #00001100,#ffffff,#00000011,#ffffff,#000000
-rofi.color-window:                  #d0001100,#000000
+rofi.color-window:                  #d0000011,#000000
 
 rofi.padding:                       200
 rofi.line-margin:                   10
