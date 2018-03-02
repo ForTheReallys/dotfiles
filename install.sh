@@ -51,12 +51,30 @@ function yes_no() {
 	echo $input
 }
 
+function install_command_t() {
+	echo "Installing Command-T"
+	cd ~/.vim/pack/bundle/start/command-t/ruby/command-t/ext/command-t
+	ruby extconf.rb
+	make
+}
+
+function install_ycm() {
+	echo "To install YouCompleteme, run
+	cd ~/.vim/pack/bundle/start/YouCompleteMe/
+	./install.py [--your favorite completers]"
+}
+
 function main() {
 	warn "Running this install script will the following files:\n $files_in_danger"
 	answer=$(yes_no "Would you like to continue?")
 	if [[ $answer == 'y' ]]; then
 		setup_links
 	fi
+
+	echo
+	install_command_t
+	echo
+	install_ycm
 }
 
 function setup_links() {
@@ -73,8 +91,8 @@ function setup_links() {
 		if [[ $? -ne 0 ]]; then
 			DIR="${LINK%/*}"
 			echo "Something went wrong, let's see if we can fix it"
-		 	echo mkdir -p "$DIR"
-		 	mkdir -p "$DIR"
+			echo mkdir -p "$DIR"
+			mkdir -p "$DIR"
 
 			echo "ln -sf $DOTFILE $LINK"
 			ln -sf "$DOTFILE" "$LINK"
