@@ -47,6 +47,7 @@ config.bind('<ctrl+shift+B>', 'rl-backward-word', mode='command')
 config.bind('<ctrl+shift+B>', 'rl-backward-word', mode='prompt')
 config.bind('<ctrl+shift+F>', 'rl-forward-word', mode='command')
 config.bind('<ctrl+shift+F>', 'rl-forward-word', mode='prompt')
+config.bind('<ctrl+w>', 'rl-backward-kill-word', mode='prompt')
 
 # Settings
 c.auto_save.session = True
