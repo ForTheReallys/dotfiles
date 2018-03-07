@@ -1,4 +1,4 @@
-let g:UltiSnipsSnippetDirectories = [$HOME."/.vim/Ultisnips", $HOME."/.vim/Ultisnips/private"]
+let g:UltiSnipsSnippetDirectories = [$HOME."/.vim/Ultisnips", $HOME."/.private/UltiSnips/"]
 
 let g:UltiSnipsEditSplit           = "vertical"
 let g:UltiSnipsExpandTrigger       = "<Tab>"
