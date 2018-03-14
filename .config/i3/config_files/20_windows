@@ -6,6 +6,7 @@
 assign [class="^Google-chrome"] $work_browser
 assign [class="^qutebrowser$"] $work_browser
 assign [class="^Chromium$"] $work_browser
+assign [class="^Firefox$"] $work_browser
 # virtual machines
 assign [class="^VirtualBox$"] $work_vm
 # Computer Science

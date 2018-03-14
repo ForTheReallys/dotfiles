@@ -69,7 +69,9 @@ c.url.searchengines = {
         'th': 'https://thesaurus.com/browse/{}?s=t',
         'the': 'https://thesaurus.com/browse/{}?s=t',
         'yt': 'https://youtube.com/results?search_query={}',
-        'tw': 'https://twitter.com/search?q={}&src=typd'
+        'tw': 'https://twitter.com/search?q={}&src=typd',
+        'az':
+        'https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords={}'
         }
 
 ## How often (in milliseconds) to auto-save config/cookies/etc.
