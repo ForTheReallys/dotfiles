@@ -5,7 +5,7 @@ snippet ver "@version <date>" w
 endsnippet
 
 snippet main "Main function" b
-public static void main(String[] args) {
+public static final void main(String[] args) {
 	${0:/*code*/}
 }
 endsnippet
@@ -56,18 +56,6 @@ snippet print "print a single line" b
 System.out.print($0);
 endsnippet
 
-snippet import "import" b
-import ${0:java.util.Scanner};
-endsnippet
-
-snippet util
-import java.util.${1:*};
-endsnippet
-
-snippet io
-import java.io.${1:*};
-endsnippet
-
 snippet ps "public static" b
 public static
 endsnippet
@@ -104,13 +92,19 @@ endsnippet
 snippet try "Try Block" b
 try {
 	${1:${VISUAL: \/\/code}}
+} catch (${2:Exception e}) {
+	${0://erorr code}
 }
 endsnippet
 
-snippet catch "Catch exception" w
+snippet ca "Catch exception" w
 catch (${1:Exception e}) {
-	${0://code}
+	${0://erorr code}
 }
+endsnippet
+
+snippet ce "Catch exception" w
+catch (${1:Exception e}) {}
 endsnippet
 
 snippet sync "synchronized(semaphore)" b
