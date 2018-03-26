@@ -1,9 +1,9 @@
 # Sys
 
 # Pulse Audio volume controls
-bindsym XF86AudioRaiseVolume exec amixer set Master 5%+ #increase sound
-bindsym XF86AudioLowerVolume exec amixer set Master 5%- #decrease sound
-bindsym XF86AudioMute exec --no-startup-id amixer set Master toggle # mute
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute
 
 # Sreen brightness controls
 # NOTE...  this is MY xbacklight script.  It uses the roughly the same options including
