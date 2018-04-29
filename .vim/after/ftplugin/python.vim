@@ -7,3 +7,5 @@ inoremap <buffer> ++ <Space>+= 1
 inoremap <buffer> -- <Space>-= 1
 
 setlocal shiftwidth=8
+setlocal softtabstop=0
+setlocal noexpandtab

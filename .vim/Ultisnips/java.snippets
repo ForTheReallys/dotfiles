@@ -92,19 +92,19 @@ endsnippet
 snippet try "Try Block" b
 try {
 	${1:${VISUAL: \/\/code}}
-} catch (${2:Exception e}) {
-	${0://erorr code}
+} catch (${2:Exception} ${3:e}) {
+	$3.printStackTrace(System.err);
 }
 endsnippet
 
 snippet ca "Catch exception" w
-catch (${1:Exception e}) {
-	${0://erorr code}
+catch (${1:Exception} ${2:e}) {
+	$2.printStackTrace(System.err);
 }
 endsnippet
 
 snippet ce "Catch exception" w
-catch (${1:Exception e}) {}
+catch (${1:Exception} ${2:e}) {}
 endsnippet
 
 snippet sync "synchronized(semaphore)" b

@@ -28,3 +28,5 @@ fi
 if [ -d "/sbin" ]; then
     PATH=$PATH:/sbin
 fi
+
+[ ! -s ~/.config/mpd/pid_file ] && mpd
