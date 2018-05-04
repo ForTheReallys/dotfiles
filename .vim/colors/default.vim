@@ -17,7 +17,6 @@ highlight link QuickFixLine Search
 highlight link YcmWarningSection Todo
 highlight link YcmErrorSection Error
 
-highlight Comment             cterm=italic
 highlight SpecialKey          term=bold ctermfg=4 guifg=Blue
 highlight NonText             term=bold ctermfg=12 gui=bold guifg=Blue
 highlight Directory           term=bold ctermfg=4 guifg=Blue
@@ -67,5 +66,8 @@ highlight ToolbarLine         term=underline ctermbg=7 guibg=LightGrey
 highlight ToolbarButton       cterm=bold ctermfg=15 ctermbg=242 gui=bold guifg=White guibg=Grey40
 highlight Error               term=reverse ctermfg=15 ctermbg=9 guifg=White guibg=Red
 highlight Todo                term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
+
+" now my configuration
+source ~/.vim/colors/mycolors.vim
 
 let g:colors_name = "default"
