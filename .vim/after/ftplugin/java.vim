@@ -1,3 +1,4 @@
+packadd vim-javacomplete2
 setlocal omnifunc=javacomplete#Complete
 
 let g:JavaComplete_SourcesPath = getcwd()

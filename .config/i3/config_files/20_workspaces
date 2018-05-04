@@ -10,7 +10,7 @@ workspace $work_media output $main_output
 workspace $workspace7 output $main_output
 workspace $work_display output $main_output
 workspace $work_vm output $main_output
-workspace $work_random output $main_output
+workspace $work_floating output $main_output
 # one workspace for another output
 workspace $work_output output $hdmi_output
 # switch to workspace
@@ -23,7 +23,7 @@ bindsym $Alt+6 workspace $work_media
 bindsym $Alt+7 workspace $workspace7
 bindsym $Alt+8 workspace $work_display
 bindsym $Alt+9 workspace $work_vm
-bindsym $Alt+0 workspace $work_random
+bindsym $Alt+0 workspace $work_floating
 # move focused container to workspace
 bindsym $Alt+Shift+1 move container to workspace $work_term
 bindsym $Alt+Shift+2 move container to workspace $work_browser
@@ -34,7 +34,7 @@ bindsym $Alt+Shift+6 move container to workspace $work_media
 bindsym $Alt+Shift+7 move container to workspace $workspace7
 bindsym $Alt+Shift+8 move container to workspace $work_display
 bindsym $Alt+Shift+9 move container to workspace $work_vm
-bindsym $Alt+Shift+0 move container to workspace $work_random
+bindsym $Alt+Shift+0 move container to workspace $work_floating
 
 # output configuration
 # use alt and arrow keys to navigate outputs
@@ -49,3 +49,4 @@ bindsym $Alt+Shift+Down move workspace to output down
 bindsym $Alt+Shift+Right move workspace to output right
 
 for_window [workspace=$workspace7] floating enable
+for_window [workspace=$work_floating] floating enable

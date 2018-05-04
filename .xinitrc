@@ -50,6 +50,7 @@ case $windowmanager in
     i3|i3wm           ) exec i3;;
     kde               ) exec startkde;;
     xfce|xfce4        ) exec startxfce4;;
+    openbox           ) exec openbox;;
     # No known session, try to run it as command
     *                 ) exec $1;;
 esac
