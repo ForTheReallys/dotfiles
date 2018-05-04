@@ -1,5 +1,5 @@
 source ~/.vim/pack/bundle/start/vim-solarized8/colors/solarized8_dark.vim
-source ~/.vim/colors/mycolors.vim
+source ~/.vim/colors/all.vim
 
 " make all keywords bold
 highlight Type cterm=bold gui=bold

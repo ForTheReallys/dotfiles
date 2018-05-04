@@ -68,6 +68,6 @@ highlight Error               term=reverse ctermfg=15 ctermbg=9 guifg=White guib
 highlight Todo                term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
 
 " now my configuration
-source ~/.vim/colors/mycolors.vim
+source ~/.vim/colors/all.vim
 
 let g:colors_name = "default"
