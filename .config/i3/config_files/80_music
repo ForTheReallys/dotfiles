@@ -1,10 +1,10 @@
 # music keybindings
 
 # for my lenovo
-bindcode $Alt+172 exec cmus-remote --pause
-bindcode $Alt+174 exec cmus-remote --stop
-bindcode $Alt+171 exec cmus-remote --next
-bindcode $Alt+173 exec cmus-remote --prev
+bindsym $Alt+Home exec cmus-remote --pause
+bindsym $Alt+Prior exec cmus-remote --stop
+bindsym $Alt+Next exec cmus-remote --prev
+bindsym $Alt+End exec cmus-remote --next
 
 # otherwise
 # bindsym XF86AudioPlay exec cmus-remote --pause
