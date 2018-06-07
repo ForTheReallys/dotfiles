@@ -30,3 +30,4 @@ if [ -d "/sbin" ]; then
 fi
 
 [ ! -s ~/.config/mpd/pid_file ] && mpd
+export MPD_HOST="/run/user/1000/mpd-socket"

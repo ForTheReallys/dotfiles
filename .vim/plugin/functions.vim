@@ -72,3 +72,22 @@ function! VisualToggleFolds()
     "end in normal mode
     call feedkeys("\<Esc>", "t")
 endfunction
+
+" TODO
+function! Tab()
+	return "\<Tab>"
+endfunction
+
+function! TabOrSpace()
+	let l:col = getcurpos()[2]
+	let l:str = getline(".")
+	let l:regex = "^\s{" . col . "}"
+	if l:str =~ l:regex
+		return "\<Tab>"
+	endif
+
+	set expandtab
+	call feedkeys("\<Tab>", "n")
+	set noexpandtab
+	return ""
+endfunction

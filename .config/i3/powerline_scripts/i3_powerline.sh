@@ -15,6 +15,6 @@ do
 	fi
 done
 
-$home_powerline_dir/powerline-lemonbar.py --i3 -- -f "Inconsolata Nerd Font"
+$home_powerline_dir/powerline-lemonbar.py --i3 -- -f "InconsolataForPowerline Nerd Font"
 # for debugging
 #$powerline_dir/powerline-bar.py --i3

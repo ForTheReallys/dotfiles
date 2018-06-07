@@ -4,7 +4,7 @@
 font pango: Monospace 8
 
 bar {
-    position top
+	position top
 	i3bar_command ~/.i3/powerline_scripts/i3_powerline.sh &> /dev/null
 }
 
