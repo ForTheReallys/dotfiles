@@ -1,3 +1,10 @@
+function! OverwriteSession()
+	if v:this_session != ""
+		let str = "mksession! " . v:this_session
+		execute str
+	endif
+endfunction
+
 "keeps the indent when we print
 "key is just p or P
 function! KeepIndent(key)
