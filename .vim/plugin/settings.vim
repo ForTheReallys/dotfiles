@@ -106,6 +106,13 @@ set tabstop=8                               "8 spaces for each tab
 set shiftwidth=8                            "8 spaces for each tab
 set shiftround
 
+set backspace=indent,eol,start              "for backspacing anywhere I want
+
+if &ttyfast
+	set sidescroll=1                    "make side scrolling more pleasing
+	set sidescrolloff=10                "make it more readable
+endif
+
 if has("termguicolors")
 	let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum" "For true color
 	let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum" "For true color

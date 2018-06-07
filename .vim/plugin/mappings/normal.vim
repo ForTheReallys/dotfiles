@@ -9,11 +9,12 @@ endif
 if has("windows")
 	nnoremap gf<Tab>     :<C-u>execute "tabnew ".expand('<cfile>')<CR>
 	nnoremap gfn         :<C-u>execute "split ".expand('<cfile>')<CR>
+	nnoremap gfe         :<C-u>execute "edit ".expand('<cfile>')<CR>
 	if has("vertsplit")
 		nnoremap gfv :<C-u>execute "vsplit ".expand('<cfile>')<CR>
 	endif
 endif
-nnoremap gfe :<C-u>execute "edit ".expand('<cfile>')<CR>
+
 if has("xterm_clipboard")
 	"yanking and pasting from clipboard
 	nmap <Leader>y "+y
@@ -21,11 +22,15 @@ if has("xterm_clipboard")
 	nmap <Leader>p "+p
 	nmap <Leader>P "+P
 endif
+
 if has("folding")
 	"open and close folds
 	nnoremap <CR> za
 endif
 
+if has("mksession")
+	nnoremap QQ :<C-u>mksession! \| wqall<CR>
+endif
 
 nnoremap cc C
 nnoremap <Leader>fd :<C-u>filetype detect<CR>
