@@ -28,9 +28,4 @@ if has("autocmd")
 		autocmd BufRead,BufNewFile ~/BC/Theology/* setfiletype text
 		autocmd BufRead,BufNewFile ~/Clones/cmus/*,~/Clones/tmux/* setlocal noexpandtab
 	augroup end
-
-	augroup Sessions
-		autocmd!
-		autocmd VimLeave * call OverwriteSession()
-	augroup end
 endif

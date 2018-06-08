@@ -1,8 +1,5 @@
-function! OverwriteSession()
-	if v:this_session != ""
-		let str = "mksession! " . v:this_session
-		execute str
-	endif
+function! ResolvePath(path)
+	return resolve(expand(a:path))
 endfunction
 
 "keeps the indent when we print

@@ -55,3 +55,6 @@
 [submodule ".vim/pack/bundle/start/swift.vim"]
 	path = .vim/pack/bundle/start/swift.vim
 	url = https://github.com/keith/swift.vim
+[submodule "vim-sessionmgr"]
+	path = vim-sessionmgr
+	url = https://github.com/ForTheReallys/vim-sessionmgr
