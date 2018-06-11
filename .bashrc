@@ -103,4 +103,25 @@ fi
 export EDITOR=$(which vim)
 export RANGER_LOAD_DEFAULT_RC=false
 export PROMPT_DIRTRIM=3 # Trims the directory name in prompt
-export LESS="-Q" # turn off the beep in man pages
+export LESS="-Qr" # turn off the beep in man pages
+# Uncomment to search for exe files in the path
+#RUN_WINDOWS_CMDS=1
+
+KERNEL_VERSION=$(uname -v)
+if [[ $RUN_WINDOWS_CMDS ]] || [[ $version =~ "Microsoft" ]] || [[ $version =~ "Cygwin" ]];
+	RUN_WINDOWS_CMDS=1
+fi
+
+# function definitions
+if [[ $RUN_WINDOWS_CMDS -ne 0 ]]; then
+	# TODO find other cmd not found handler (usually with the distribution)
+	function command_not_found_handle() {
+		WIN_CMD="$1".exe
+		which "$WIN_CMD" &> /dev/null
+		if [[ $? -eq 0 ]]; then
+			"$WIN_CMD"
+		else
+			# call original one
+		fi
+	}
+fi
