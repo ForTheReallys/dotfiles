@@ -108,7 +108,7 @@ export LESS="-Qr" # turn off the beep in man pages
 #RUN_WINDOWS_CMDS=1
 
 KERNEL_VERSION=$(uname -v)
-if [[ $RUN_WINDOWS_CMDS ]] || [[ $version =~ "Microsoft" ]] || [[ $version =~ "Cygwin" ]];
+if [[ $RUN_WINDOWS_CMDS ]] || [[ $version =~ "Microsoft" ]] || [[ $version =~ "Cygwin" ]]; then
 	RUN_WINDOWS_CMDS=1
 fi
 
@@ -121,6 +121,7 @@ if [[ $RUN_WINDOWS_CMDS -ne 0 ]]; then
 		if [[ $? -eq 0 ]]; then
 			"$WIN_CMD"
 		else
+			true
 			# call original one
 		fi
 	}
