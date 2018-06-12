@@ -28,6 +28,7 @@
 [submodule ".vim/pack/bundle/start/vim-javacomplete2"]
 	path = .vim/pack/bundle/opt/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2.git
+	ignore = all
 [submodule ".vim/pack/bundle/start/vim-latex-live-preview"]
 	path = .vim/pack/bundle/start/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
@@ -43,6 +44,7 @@
 [submodule ".vim/pack/bundle/start/YouCompleteMe"]
 	path = .vim/pack/bundle/start/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+	ignore = all
 [submodule ".vim/pack/bundle/start/tabular"]
 	path = .vim/pack/bundle/start/tabular
 	url = https://github.com/godlygeek/tabular.git
@@ -55,6 +57,6 @@
 [submodule ".vim/pack/bundle/start/swift.vim"]
 	path = .vim/pack/bundle/start/swift.vim
 	url = https://github.com/keith/swift.vim
-[submodule "vim-sessionmgr"]
+[submodule ".vim/pack/bundle/start/vim-sessionmgr"]
 	path = .vim/pack/bundle/start/vim-sessionmgr
 	url = https://github.com/ForTheReallys/vim-sessionmgr
