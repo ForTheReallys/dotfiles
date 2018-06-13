@@ -71,6 +71,8 @@ function main() {
 		setup_links
 	fi
 
+	git submodule init
+	git submodule update
 	echo
 	install_command_t
 	echo
