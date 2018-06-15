@@ -95,3 +95,9 @@ function! TabOrSpace()
 	set noexpandtab
 	return ""
 endfunction
+
+"NOTE the mapping argument does not need escape chars but
+"the default and diff arguments do in cases like \<Nop>
+function! DiffRemap(mode, mapping, default, diff)
+	execute a:mode . "noremap <expr> " . a:mapping . " &diff ? '" . a:diff . "' : '" . a:default . "'"
+endfunction

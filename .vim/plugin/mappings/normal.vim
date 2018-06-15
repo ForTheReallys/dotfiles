@@ -77,3 +77,6 @@ nnoremap gO mzO<Esc>`z
 
 "go to old cursor position when jumping to marks
 nnoremap ' `
+
+call DiffRemap('n', '<C-n>', '\<Nop>', ']c')
+call DiffRemap('n', '<C-p>', '\<Nop>', '[c')
