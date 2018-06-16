@@ -57,18 +57,18 @@ bind-key r source ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 # COPY MODE BINDINGS #
 ######################
 
-if-shell "[[ $(echo \"$TMUX_VERSION > 2.4\" | bc -l) -eq 1 ]]" \
+if-shell "[[ $(echo \"$TMUX_VERSION <= 2.4\" | bc -l) -eq 1 ]]" \
 	"\
-	bind-key -T copy-mode-vi u send-keys -X halfpage-up; \
-	bind-key -T copy-mode-vi d send-keys -X halfpage-down; \
-	bind-key -T copy-mode-vi v send-keys -X begin-selection; \
-	bind-key -T copy-mode-vi y send-keys -X copy-selection; \
-	bind-key -T copy-mode-vi Space send-keys -X page-down; \
-	" "\
 	bind-key -t vi-copy u halfpage-up; \
 	bind-key -t vi-copy d halfpage-down; \
 	bind-key -t vi-copy v begin-selection; \
 	bind-key -t vi-copy y copy-selection; \
 	bind-key -t vi-copy Space page-down; \
+	" "\
+	bind-key -T copy-mode-vi u send-keys -X halfpage-up; \
+	bind-key -T copy-mode-vi d send-keys -X halfpage-down; \
+	bind-key -T copy-mode-vi v send-keys -X begin-selection; \
+	bind-key -T copy-mode-vi y send-keys -X copy-selection; \
+	bind-key -T copy-mode-vi Space send-keys -X page-down; \
 	"
 # vim: set filetype=tmux:
