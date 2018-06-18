@@ -1,6 +1,7 @@
 let g:ycm_key_list_select_completion   = ['<C-n>, <Up>']
 let g:ycm_key_list_previous_completion = ['<C-p>, <Down>']
 let g:ycm_key_list_accept_completion   = ['<C-y>']
+let g:ycm_key_invoke_completion        = '<C-c>'
 
 "use the default ycm_extra_conf.py
 set completeopt-=preview
