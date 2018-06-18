@@ -60,3 +60,6 @@
 [submodule ".vim/pack/bundle/start/vim-sessionmgr"]
 	path = .vim/pack/bundle/start/vim-sessionmgr
 	url = https://github.com/ForTheReallys/vim-sessionmgr
+[submodule ".vim/pack/bundle/start/splice.vim"]
+	path = .vim/pack/bundle/start/splice.vim
+	url = https://github.com/sjl/splice.vim
