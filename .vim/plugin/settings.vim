@@ -70,6 +70,11 @@ endif
 if exists("+relativenumber")
 	set relativenumber
 endif
+
+if has("quickfix")
+	let $MAKEFLAGS = "-s"
+endif
+
 set number
 
 set mps=(:)                         "To characters to be used with %
