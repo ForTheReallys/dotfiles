@@ -63,3 +63,6 @@
 [submodule ".vim/pack/bundle/start/splice.vim"]
 	path = .vim/pack/bundle/start/splice.vim
 	url = https://github.com/sjl/splice.vim
+[submodule ".vim/pack/bundle/start/typescript-vim"]
+	path = .vim/pack/bundle/start/typescript-vim
+	url = https://github.com/leafgarland/typescript-vim
