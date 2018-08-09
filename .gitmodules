@@ -11,7 +11,7 @@
 	path = .vim/pack/bundle/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs.git
 [submodule ".vim/pack/bundle/start/command-t"]
-	path = .vim/pack/bundle/start/command-t
+	path = .vim/pack/bundle/opt/command-t
 	url = https://github.com/wincent/command-t.git
 [submodule ".vim/pack/bundle/start/nerdcommenter"]
 	path = .vim/pack/bundle/start/nerdcommenter
@@ -23,14 +23,14 @@
 	path = .vim/pack/bundle/start/tagbar
 	url = https://github.com/majutsushi/tagbar.git
 [submodule ".vim/pack/bundle/start/ultisnips"]
-	path = .vim/pack/bundle/start/ultisnips
+	path = .vim/pack/bundle/opt/ultisnips
 	url = https://github.com/SirVer/ultisnips.git
 [submodule ".vim/pack/bundle/start/vim-javacomplete2"]
 	path = .vim/pack/bundle/opt/vim-javacomplete2
 	url = https://github.com/artur-shaik/vim-javacomplete2.git
 	ignore = all
 [submodule ".vim/pack/bundle/start/vim-latex-live-preview"]
-	path = .vim/pack/bundle/start/vim-latex-live-preview
+	path = .vim/pack/bundle/opt/vim-latex-live-preview
 	url = https://github.com/xuhdev/vim-latex-live-preview.git
 [submodule ".vim/pack/bundle/start/vim-nerdtree-tabs"]
 	path = .vim/pack/bundle/start/vim-nerdtree-tabs
@@ -42,7 +42,7 @@
 	path = .vim/pack/bundle/start/vim-surround
 	url = https://github.com/tpope/vim-surround.git
 [submodule ".vim/pack/bundle/start/YouCompleteMe"]
-	path = .vim/pack/bundle/start/YouCompleteMe
+	path = .vim/pack/bundle/opt/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
 	ignore = all
 [submodule ".vim/pack/bundle/start/tabular"]
@@ -55,7 +55,7 @@
 	path = .vim/pack/bundle/start/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8
 [submodule ".vim/pack/bundle/start/swift.vim"]
-	path = .vim/pack/bundle/start/swift.vim
+	path = .vim/pack/bundle/opt/swift.vim
 	url = https://github.com/keith/swift.vim
 [submodule ".vim/pack/bundle/start/vim-sessionmgr"]
 	path = .vim/pack/bundle/start/vim-sessionmgr
@@ -64,5 +64,5 @@
 	path = .vim/pack/bundle/start/splice.vim
 	url = https://github.com/sjl/splice.vim
 [submodule ".vim/pack/bundle/start/typescript-vim"]
-	path = .vim/pack/bundle/start/typescript-vim
+	path = .vim/pack/bundle/opt/typescript-vim
 	url = https://github.com/leafgarland/typescript-vim

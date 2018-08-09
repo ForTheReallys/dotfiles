@@ -119,6 +119,7 @@ if [[ $RUN_WINDOWS_CMDS -ne 0 ]]; then
 		WIN_CMD="$1".exe
 		which "$WIN_CMD" &> /dev/null
 		if [[ $? -eq 0 ]]; then
+			echo "Using windows executable"
 			"$WIN_CMD"
 		else
 			true

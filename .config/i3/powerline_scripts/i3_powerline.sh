@@ -1,6 +1,6 @@
 #!/bin/sh
 
-powerline_dir="/usr/lib/python3.6/site-packages/powerline/bindings/bar/"
+powerline_dir="/usr/lib/python3.7/site-packages/powerline/bindings/bar/"
 home_powerline_dir="$HOME/.i3/powerline_scripts/"
 
 # kill any powerline lemonbar instances on the current $DISPLAY and restart

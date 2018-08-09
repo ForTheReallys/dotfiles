@@ -67,15 +67,12 @@ if has("patch-7.4.793")
 	set belloff=all                     "turn off the bell
 endif
 
-if exists("+relativenumber")
-	set relativenumber
-endif
-
 if has("quickfix")
 	let $MAKEFLAGS = "-s"
 endif
 
 set number
+set relativenumber
 
 set mps=(:)                         "To characters to be used with %
 set mps+={:}
@@ -112,6 +109,11 @@ set shiftwidth=8                            "8 spaces for each tab
 set shiftround
 
 set backspace=indent,eol,start              "for backspacing anywhere I want
+
+set shortmess=filmnrxstToO
+if has("patch-7.4.314")
+	set shortmess+=c
+endif
 
 if &ttyfast
 	set sidescroll=1                    "make side scrolling more pleasing

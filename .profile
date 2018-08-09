@@ -31,3 +31,5 @@ fi
 
 [ ! -s ~/.config/mpd/pid_file ] && mpd
 export MPD_HOST="/run/user/1000/mpd-socket"
+
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
