@@ -7,10 +7,10 @@ bindsym $Alt+Next exec cmus-remote --prev
 bindsym $Alt+End exec cmus-remote --next
 
 # otherwise
-# bindsym XF86AudioPlay exec cmus-remote --pause
-# bindsym XF86AudioStop exec cmus-remote --stop
-# bindsym XF86AudioNext exec cmus-remote --next
-# bindsym XF86AudioPrev exec cmus-remote --prev
+bindsym XF86AudioPlay exec cmus-remote --pause
+bindsym XF86AudioStop exec cmus-remote --stop
+bindsym XF86AudioNext exec cmus-remote --next
+bindsym XF86AudioPrev exec cmus-remote --prev
 
 bindsym $Alt+m [title="^Music$"] scratchpad show ; move position center
 
