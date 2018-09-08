@@ -3,6 +3,17 @@
 # All this program does is download a youtube video
 # converts it to mp3 and changes the name
 
+# $1: the url to download
+# $3: the quality.  By default, the quality is best but if the connection is bad, you can pass "worst"
+download() {
+	QUALITY="bestaudio"
+	if [ "$2" = "worst" ]; then
+		QUALITY="worstaudio"
+	fi
+
+	youtube-dl "$1" -x --audio-format mp3 -f $QUALITY
+}
+
 if [ $# -lt 2 ]
 then
 	echo "Usage: $0 Youtube_URL output_file"
@@ -17,22 +28,17 @@ then
 	exit 1
 fi
 
-	
-
 if [ $? -ne 0 ]
 then
 	exit $?
 fi
 
-if [ -z "$3" ] || [ "$3" = "worst" ]
-then
-	youtube-dl "$1" -x --audio-format mp3 -f worstaudio
-elif [ "$3" = "best" ]
-then
-	youtube-dl "$1" -x --audio-format mp3 -f bestaudio
-else
-	youtube-dl "$1" -x --audio-format mp3 -f bestaudio
+download "$1" "$3"
+if [ $? -ne 0 ]; then
+	echo "Couldn't download the file for some reason..." >&2
+	exit 1
 fi
+
 Title=$(ls -1c | head -1)
 
 mv "$Title"* "$2.mp3"
