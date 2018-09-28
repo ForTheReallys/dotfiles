@@ -46,3 +46,12 @@ endsnippet
 snippet // "Comment expansion"
 /* ${1:${VISUAL:comment here}} */
 endsnippet
+
+snippet asm "Inline assembly" b
+__asm__(
+	"${0:${VISUAL:code here}}"
+	: ${1:/* Output variables */}
+	: ${2:/* Input variables */}
+	: ${3:/* Clobbered registers */}
+	);
+endsnippet
