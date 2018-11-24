@@ -1,3 +1,4 @@
+TMUX_SCRIPT_DIR=$HOME/.tmux/scripts
 run-shell "tmux set-env -g TMUX_VERSION $(tmux -V | cut -d' ' -f2)"
 new-session -s 0
 

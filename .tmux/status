@@ -1,5 +1,5 @@
 # Powerline
-source "/usr/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf"
+run-shell "$TMUX_SCRIPT_DIR/load_powerline.sh"
 
 set -g message-style bg=black,fg=default,bold
 
