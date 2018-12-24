@@ -31,3 +31,14 @@ bindkey -v
 [ -r ~/.zsh_aliases ] && . ~/.zsh_aliases
 
 bindkey -v '^?' backward-delete-char
+
+# Setting PS1
+color_prompt=y
+if [ -z "$color_prompt" ]; then
+	. ~/.shell/color
+	terminal_has_color && color_prompt=y
+fi
+PS1='%n@%m: %1~%(!.#.$) '
+[ "$color_prompt" = y ] && PS1='%B%F{red}%n@%m%f%b: %B%F{blue}%1~%f%b%(!.#.$) '
+
+# Setting RPS1

@@ -23,6 +23,7 @@ $CONFIG/qutebrowser/config.py
 .gvimrc
 .inputrc
 .profile
+.shell
 .tmux
 .tmux.conf
 .urxvt
