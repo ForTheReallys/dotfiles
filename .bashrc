@@ -2,6 +2,8 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+[ -r ~/.environment ] && . ~/.environment
+
 # If not running interactively, don't do anything
 case $- in
 	*i*) ;;
@@ -43,7 +45,7 @@ esac
 # color prompt if we have it
 force_color_prompt=yes
 
-if [ -n "$force_color_prompt" ]; then
+if [ -z "$force_color_prompt" ]; then
 	if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
 		# We have color support; assume it's compliant with Ecma-48
 		# (ISO/IEC-6429). (Lack of such support is extremely rare, and such
@@ -52,6 +54,8 @@ if [ -n "$force_color_prompt" ]; then
 	else
 		color_prompt=
 	fi
+else
+	color_prompt=yes
 fi
 
 if [ "$color_prompt" = yes ]; then
@@ -70,24 +74,12 @@ case "$TERM" in
 		;;
 esac
 
-# enable color support of ls and also add handy aliases
-if [ -x /usr/bin/dircolors ]; then
-	test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	alias ls='ls --color=auto'
-
-	alias grep='grep --color=auto'
-	alias fgrep='fgrep --color=auto'
-	alias egrep='egrep --color=auto'
-fi
-
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
-	. ~/.bash_aliases
-fi
+[ -f ~/.bash_aliases ] && . ~/.bash_aliases
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -100,10 +92,6 @@ if ! shopt -oq posix; then
 	fi
 fi
 
-export EDITOR=$(which vim)
-export RANGER_LOAD_DEFAULT_RC=false
-export PROMPT_DIRTRIM=3 # Trims the directory name in prompt
-export LESS="-Qr" # turn off the beep in man pages
 # Uncomment to search for exe files in the path
 #RUN_WINDOWS_CMDS=1
 

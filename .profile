@@ -8,28 +8,10 @@
 # for ssh logins, install and configure the libpam-umask package.
 #umask 022
 
-# if running bash
-if [ -n "$BASH_VERSION" ]; then
-    # include .bashrc if it exists
-    if [ -f "$HOME/.bashrc" ]; then
-	. "$HOME/.bashrc"
-    fi
-fi
-
 # adding dirs to the path
-if [ -d "$HOME/.local/bin" ]; then
-    PATH="$HOME/.local/bin:$PATH"
-fi
+[ -d "$HOME/.local/bin" ] && PATH="$HOME/.local/bin:$PATH"
+[ -d "$HOME/bin" ]        && PATH="$HOME/bin:$PATH"
+[ -d "/sbin" ]            && PATH=$PATH:/sbin
 
-if [ -d "$HOME/bin" ] ; then
-    PATH="$HOME/bin:$PATH"
-fi
-
-if [ -d "/sbin" ]; then
-    PATH=$PATH:/sbin
-fi
-
-[ ! -s ~/.config/mpd/pid_file ] && mpd
-export MPD_HOST="/run/user/1000/mpd-socket"
-
-export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+# start mpd at login
+# [ ! -e ~/.config/mpd/pid_file ] && mpd

@@ -1,0 +1,1 @@
+[ -r ~/.environment ] && . ~/.environment

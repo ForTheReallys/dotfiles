@@ -1,4 +1,6 @@
 #
 # ~/.bash_profile
 #
-[[ -f ~/.profile ]] && . ~/.profile
+[ -r ~/.environment ]  && . ~/.environment
+[ -r ~/.profile ]      && . ~/.profile
+[ -r ~/.bashrc ]       && . ~/.bashrc
