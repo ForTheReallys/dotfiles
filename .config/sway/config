@@ -1,0 +1,22 @@
+include ~/.config/i3/config_files/*[^\.i3]
+
+output * {
+	background ~/.background fit
+}
+
+input * {
+	tap enabled
+	natural_scroll disabled
+	xkb_numlock enabled
+}
+
+input 2:14:ETPS/2_Elantech_Touchpad {
+	natural_scroll enabled
+}
+
+bar {
+	position top
+	font 8
+}
+
+# vim: ft=conf:
