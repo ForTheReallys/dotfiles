@@ -1,0 +1,22 @@
+# portable (as far as I know) script to reload environment variables from tmux
+# into the shell
+
+[ -z "$TMUX" ] && return
+
+FIFO=~/.env_fifo
+# Leave uncommented to overwrite $FIFO if it already exists
+[ -e "$FIFO" ] && rm "$FIFO"
+
+mkfifo $FIFO -m 600 || (echo Not modifying the environment ; return)
+
+# put it in a subshell to suppress the output and escape all single quotes
+(tmux show-environment | sed -e s/\'/\'\\\\\'\'/g > $FIFO &)
+
+while read -r line; do
+	# this MUST use single quotes to avoid misinterpretation by the shell
+	eval export \'$line\' 2> /dev/null
+done < $FIFO
+
+rm $FIFO
+
+unset FIFO
