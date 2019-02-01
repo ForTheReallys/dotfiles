@@ -52,6 +52,6 @@ set $work_media     "6  "
 set $workspace7     "7  "
 set $work_display   "8  "
 set $work_vm        "9  "
-set $work_floating    "10  "
+set $work_floating  "10  "
 set $work_output    "11  "
 

@@ -12,9 +12,11 @@ then
     exit 1
 fi
 
-if [[ -e $CONFIG_FILE ]]; then
+if [ -e $CONFIG_FILE ]; then
 	mv $CONFIG_FILE $BACKUP
 fi
 
 cat * > $CONFIG_FILE
-i3-msg restart
+if i3-msg restart | grep false -q; then
+	i3-msg reload
+fi

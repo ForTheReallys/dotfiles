@@ -36,18 +36,18 @@ for_window [tiling] border none
 for_window [floating] move position center
 
 # settings for workspaces
-for_window[workspace=$work_browser] layout tabbed
+for_window [workspace=$work_browser] layout tabbed
 
 # specific window settings
 
 # music settings
-for_window[title="^Music$"] floating enable
-for_window[title="^Music$"] move scratchpad
-for_window[title="^Music$"] sticky enable
+for_window [title="^Music$"] floating enable
+for_window [title="^Music$"] move scratchpad
+for_window [title="^Music$"] sticky enable
 
 # computer science
-for_window[title="^Turnkey"] move scratchpad
-for_window[title="^Turnkey"] resize set 345 110
+for_window [title="^Turnkey"] move scratchpad
+for_window [title="^Turnkey"] resize set 345 110
 
 # gvim
 for_window [class="^Gvim$"] floating enable # used mainly as scratchpad for qutebrowser

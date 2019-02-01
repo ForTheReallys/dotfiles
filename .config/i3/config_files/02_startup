@@ -2,12 +2,3 @@
 
 # on startup
 exec $script_dir/startup.sh
-exec --no-startup-id xrdb ~/.Xresources
-exec --no-startup-id compton -b --inactive-dim 0.6 --no-fading-openclose # for transparent backgrounds
-exec --no-startup-id i3-msg gaps inner all set 10; i3-msg gaps outer all set 0
-# go straight to MY first workspace
-exec --no-startup-id i3-msg workspace $work_term
-
-# on restart
-exec_always --no-startup-id feh --bg-scale ~/.background
-

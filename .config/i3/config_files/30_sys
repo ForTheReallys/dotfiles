@@ -6,8 +6,7 @@ bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle # mute
 
 # Sreen brightness controls
-# NOTE...  this is MY xbacklight script.  It uses the roughly the same options including
-# inc, dec, set, and get so it can be used here and with the status bar
+# NOTE...  this is not xrandr's xbacklight.  Instead it manipulates /sys/class/* directly
 bindsym XF86MonBrightnessUp exec xbacklight -inc 5 # increase brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 5 # decrease brightness
 bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 10 # increase brightness slightly
