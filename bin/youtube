@@ -14,22 +14,25 @@ download() {
 	youtube-dl "$1" -x --audio-format mp3 -f $QUALITY
 }
 
-if [ $# -lt 2 ]
-then
-	echo "Usage: $0 Youtube_URL output_file"
+# find executable
+has() {
+	which "$1" > /dev/null 2>&1
+	return $?
+}
+
+if [ $# -lt 2 ]; then
+	echo "Usage: $0 Youtube_URL output_file" >&2
 	exit 1
 fi
 
 cd ~/Music
 
-if [ -f "$2".mp3 ]
-then
+if [ -f "$2".mp3 ]; then
 	echo 2>&1 "$2".mp3 already exists
 	exit 1
 fi
 
-if [ $? -ne 0 ]
-then
+if [ $? -ne 0 ]; then
 	exit $?
 fi
 
@@ -42,10 +45,9 @@ fi
 Title=$(ls -1c | head -1)
 
 mv "$Title"* "$2.mp3"
-which mp3info &> /dev/null
 
 # start an interactive prompt to set artist and other stuff
-if [ $? -eq 0 ]
+if has mp3info
 then
 	mp3info "$2.mp3" -t "$2"
 	mp3info "$2.mp3" -i
