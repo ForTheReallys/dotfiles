@@ -100,11 +100,10 @@ setup_links() {
 		# if this fails, try to create the mising directories and try try again
 		if ! ln -vsf "$DOTFILE" "$LINK"; then
 			DIR=$(dirname "$LINK")
-			error "Something went wrong, let's see if we can fix it"
 			mkdir -pv "$DIR"
 
 			if ! ln -vsf "$DOTFILE" "$LINK"; then
-				error "Could not fix the problem, skipping $LINK"
+				error "Something went wrong, skipping $LINK"
 			fi
 		fi
 	done << EOF
