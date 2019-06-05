@@ -7,6 +7,7 @@ else
 fi
 
 files_in_danger=".vim
+.vimrc
 .bash_aliases
 .bash_profile
 .bashrc
@@ -98,11 +99,11 @@ setup_links() {
 		DOTFILE="$PWD/$i"
 
 		# if this fails, try to create the mising directories and try try again
-		if ! ln -vsf "$DOTFILE" "$LINK"; then
+		if ! ln -Tvsf "$DOTFILE" "$LINK"; then
 			DIR=$(dirname "$LINK")
 			mkdir -pv "$DIR"
 
-			if ! ln -vsf "$DOTFILE" "$LINK"; then
+			if ! ln -Tvsf "$DOTFILE" "$LINK"; then
 				error "Something went wrong, skipping $LINK"
 			fi
 		fi
