@@ -33,7 +33,11 @@ $CONFIG/qutebrowser/config.py
 
 # $1 the warning message
 warn() {
-	echo -e "WARNING!! $1"
+	echo "WARNING!! $1" 1>&2
+}
+
+error() {
+	echo "Error: $1" 1>&2
 }
 
 # $1 the prompt
@@ -68,6 +72,11 @@ install_ycm() {
 }
 
 main() {
+	DIR=$(dirname $0)
+	if [ "$DIR" != "." ]; then
+		cd $DIR
+	fi
+
 	warn "Running this install script will the following files:\n$files_in_danger"
 	answer=$(yes_no "Would you like to continue?")
 	if [ "$answer" = 'y' ]; then
@@ -90,12 +99,12 @@ setup_links() {
 
 		# if this fails, try to create the mising directories and try try again
 		if ! ln -vsf "$DOTFILE" "$LINK"; then
-			DIR=$(basename "$LINK")
-			echo "Something went wrong, let's see if we can fix it"
+			DIR=$(dirname "$LINK")
+			error "Something went wrong, let's see if we can fix it"
 			mkdir -pv "$DIR"
 
 			if ! ln -vsf "$DOTFILE" "$LINK"; then
-				echo "Could not fix the problem, skipping $LINK"
+				error "Could not fix the problem, skipping $LINK"
 			fi
 		fi
 	done << EOF
