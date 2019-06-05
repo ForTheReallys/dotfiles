@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [[ ! -z $XDG_CONFIG_HOME ]]; then
+if [ ! -z "$XDG_CONFIG_HOME" ]; then
 	CONFIG="$XDG_CONFIG_HOME"
 else
 	CONFIG=".config"
@@ -32,19 +32,18 @@ $CONFIG/qutebrowser/config.py
 .Xresources.d"
 
 # $1 the warning message
-function warn() {
+warn() {
 	echo -e "WARNING!! $1"
 }
 
 # $1 the prompt
 # echoes the answer
-function yes_no() {
+yes_no() {
 	input=""
 
-	while [[ $input != "n" ]] && [[ $input != "y" ]]
-	do
+	while [ "$input" != "n" ] && [ "$input" != "y" ]; do
 		read -p "$1 [y/n] " input
-		if [[ $input != "n" ]] && [[ $input != "y" ]]; then
+		if [ "$input" != "n" ] && [ "$input" != "y" ]; then
 			echo "Please enter [y/n]"
 		fi
 	done
@@ -52,23 +51,26 @@ function yes_no() {
 	echo $input
 }
 
-function install_command_t() {
-	echo "Installing Command-T"
-	cd ~/.vim/pack/bundle/start/command-t/ruby/command-t/ext/command-t
-	ruby extconf.rb
-	make
+install_command_t() {
+	if which ruby && which make; then
+		echo "Installing Command-T"
+		cd ~/.vim/pack/bundle/start/command-t/ruby/command-t/ext/command-t
+
+		ruby extconf.rb
+		make
+	fi
 }
 
-function install_ycm() {
+install_ycm() {
 	echo "To install YouCompleteme, run
 	cd ~/.vim/pack/bundle/start/YouCompleteMe/
-	./install.py [--your favorite completers]"
+	./install.py [--your-favorite-completers]"
 }
 
-function main() {
-	warn "Running this install script will the following files:\n $files_in_danger"
+main() {
+	warn "Running this install script will the following files:\n$files_in_danger"
 	answer=$(yes_no "Would you like to continue?")
-	if [[ $answer == 'y' ]]; then
+	if [ "$answer" = 'y' ]; then
 		setup_links
 	fi
 
@@ -80,33 +82,25 @@ function main() {
 	install_ycm
 }
 
-function setup_links() {
-	OLDIFS=$IFS
-	IFS=$'\n'
-	for i in $files_in_danger
+setup_links() {
+	while read i
 	do
 		LINK="$HOME/$i"
 		DOTFILE="$PWD/$i"
-		echo "ln -sf $DOTFILE $LINK"
-		ln -sf "$DOTFILE" "$LINK" 2> /dev/null
 
 		# if this fails, try to create the mising directories and try try again
-		if [[ $? -ne 0 ]]; then
-			DIR="${LINK%/*}"
+		if ! ln -vsf "$DOTFILE" "$LINK"; then
+			DIR=$(basename "$LINK")
 			echo "Something went wrong, let's see if we can fix it"
-			echo mkdir -p "$DIR"
-			mkdir -p "$DIR"
+			mkdir -pv "$DIR"
 
-			echo "ln -sf $DOTFILE $LINK"
-			ln -sf "$DOTFILE" "$LINK"
-
-			if [[ $? -ne 0 ]]; then
+			if ! ln -vsf "$DOTFILE" "$LINK"; then
 				echo "Could not fix the problem, skipping $LINK"
 			fi
 		fi
-	done
-
-	IFS=$OLDIFS
+	done << EOF
+	$files_in_danger
+EOF
 }
 
 main
