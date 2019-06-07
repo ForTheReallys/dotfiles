@@ -6,8 +6,7 @@ BACKUP=$CONFIG_FILE.backup
 
 cd $CONFIG_DIR
 
-if [ $? -eq 1 ]
-then
+if [ $? -eq 1 ]; then
     echo "Could not find config directory"
     exit 1
 fi

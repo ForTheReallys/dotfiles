@@ -1,9 +1,4 @@
-if exists("g:loaded_powerline")
-    finish
-endif
-
-if has("statusline") && has("python3")
-	let g:loaded_powerline = 1
+function! powerline#StartPowerline()
 	python3 << EOF
 import vim
 try:
@@ -16,4 +11,4 @@ try:
 except ImportError:
 	pass
 EOF
-endif
+endfunction

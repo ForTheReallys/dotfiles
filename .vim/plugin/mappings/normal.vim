@@ -1,35 +1,27 @@
-if has("cmdline_hist") && has("vertsplit")
-	nnoremap : q:
-endif
-
 if has("browse")
-	nnoremap <Leader>o :<C-u>browse set<CR>
+	call browse#CreateMappings()
 endif
 
 if has("windows")
-	nnoremap gf<Tab>     :<C-u>execute "tabnew ".expand('<cfile>')<CR>
-	nnoremap gfn         :<C-u>execute "split ".expand('<cfile>')<CR>
-	nnoremap gfe         :<C-u>execute "edit ".expand('<cfile>')<CR>
+	call windows#CreateMappings()
 	if has("vertsplit")
-		nnoremap gfv :<C-u>execute "vsplit ".expand('<cfile>')<CR>
+		call windows#CreateVertMappings()
+		if has("cmdline_hist")
+			call windows#CreateCmdWinMappings()
+		endif
 	endif
 endif
 
 if has("xterm_clipboard")
-	"yanking and pasting from clipboard
-	nmap <Leader>y "+y
-	nmap <Leader>Y "+Y
-	nmap <Leader>p "+p
-	nmap <Leader>P "+P
+	call X#CreateClipboardMappings()
 endif
 
 if has("folding")
-	"open and close folds
-	nnoremap <CR> za
+	call folds#CreateFoldingMappings()
 endif
 
 if has("mksession")
-	nnoremap QQ :<C-u>mksession! \| wqall<CR>
+	call sessions#CreateMappings()
 endif
 
 nnoremap cc C
@@ -46,12 +38,6 @@ nnoremap - <C-x>
 nnoremap <silent> j gj
 nnoremap <silent> k gk
 
-"sometimes I have a snippet of text that I want to put on the next
-"or previous line but have to create the line first... so I wrote this
-"so now I don't have to
-nnoremap <silent> gp :<C-u>call PrintLine("p")<CR>
-nnoremap <silent> gP :<C-u>call PrintLine("P")<CR>
-
 "keep searches in the middle of the screen
 nnoremap n nzz
 nnoremap N Nzz
@@ -59,11 +45,6 @@ nnoremap N Nzz
 "select the rest of the line but not the newline
 nnoremap vv v$h
 nnoremap yy y$
-
-"like page up and page down but move the cursor
-"to the top or bottom before acting like those keys
-nnoremap <silent> <expr> H ForTheReallys#UP()
-nnoremap <silent> <expr> L ForTheReallys#DOWN()
 
 "remove all unnecessary white space
 nnoremap ss :s/\s*$//g<CR>
@@ -80,3 +61,14 @@ nnoremap ' `
 
 call DiffRemap('n', '<C-n>', '\<Nop>', ']c')
 call DiffRemap('n', '<C-p>', '\<Nop>', '[c')
+
+"sometimes I have a snippet of text that I want to put on the next
+"or previous line but have to create the line first... so I wrote this
+"so now I don't have to
+nnoremap <silent> gp :<C-u>call PrintLine("p")<CR>
+nnoremap <silent> gP :<C-u>call PrintLine("P")<CR>
+
+"like page up and page down but move the cursor
+"to the top or bottom before acting like those keys
+nnoremap <silent> <expr> H ForTheReallys#UP()
+nnoremap <silent> <expr> L ForTheReallys#DOWN()

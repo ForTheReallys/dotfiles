@@ -49,6 +49,8 @@ config.bind('<ctrl+shift+F>', 'rl-forward-word', mode='command')
 config.bind('<ctrl+shift+F>', 'rl-forward-word', mode='prompt')
 config.bind('<ctrl+w>', 'rl-backward-kill-word', mode='prompt')
 
+config.bind('T', 'tab-focus last')
+
 # Settings
 c.auto_save.session = True
 
@@ -60,6 +62,7 @@ c.auto_save.session = True
 ## Type: Dict
 c.url.searchengines = {
         'DEFAULT': 'https://duckduckgo.com/?q={}',
+	'duck': 'https://duckduckgo.com/?q={}',
         'gh': 'https://github.com/search/?q={}',
         'go': 'https://google.com/search?q={}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}',
@@ -70,8 +73,7 @@ c.url.searchengines = {
         'the': 'https://thesaurus.com/browse/{}?s=t',
         'yt': 'https://youtube.com/results?search_query={}',
         'tw': 'https://twitter.com/search?q={}&src=typd',
-        'az':
-        'https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords={}'
+        'az': 'https://www.amazon.com/s/ref=nb_sb_noss_2?url=search-alias%3Daps&field-keywords={}'
         }
 
 ## How often (in milliseconds) to auto-save config/cookies/etc.
@@ -816,7 +818,7 @@ c.url.searchengines = {
 ## Default monospace fonts. Whenever "monospace" is used in a font
 ## setting, it's replaced with the fonts listed here.
 ## Type: Font
-# c.fonts.monospace = '"xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
+c.fonts.monospace = '"Droid Sans Mono For Powerline" "xos4 Terminus", Terminus, Monospace, "DejaVu Sans Mono", Monaco, "Bitstream Vera Sans Mono", "Andale Mono", "Courier New", Courier, "Liberation Mono", monospace, Fixed, Consolas, Terminal'
 
 ## Font used for prompts.
 ## Type: Font
@@ -1052,7 +1054,7 @@ c.url.searchengines = {
 ## https://peter.sh/experiments/chromium-command-line-switches/ for a
 ## list) will work. This setting requires a restart.
 ## Type: List of String
-# c.qt.args = []
+c.qt.args = ["ppapi-widevine-path=/usr/lib/chromium/libwidevinecdm.so"]
 
 ## Force a Qt platform to use. This sets the `QT_QPA_PLATFORM`
 ## environment variable and is useful to force using the XCB plugin when

@@ -13,5 +13,8 @@
 [ -d "$HOME/bin" ]        && PATH="$HOME/bin:$PATH"
 [ -d "/sbin" ]            && PATH=$PATH:/sbin
 
+# for /bin/sh
+export ENV=$HOME/.shell/shrc
+
 # start mpd at login
 # [ ! -e ~/.config/mpd/pid_file ] && mpd

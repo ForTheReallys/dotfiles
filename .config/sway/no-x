@@ -1,0 +1,11 @@
+# since we include this here, sway will not include it again when we include
+# the main sway config, allowing us to override variable values before they get
+# translated
+include ~/.config/i3/config_files/01_variables
+include variables
+
+include ~/.config/sway/config
+
+xwayland disable
+
+# vim: set ft=conf:

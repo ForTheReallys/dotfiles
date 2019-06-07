@@ -1,0 +1,39 @@
+{
+	"spaces": 1,
+	"segments": {
+		"right": [
+			{
+				"function": "powerline.segments.common.time.date",
+				"args": {
+					"format": "%b %d %Y"
+				}
+			},
+			{
+				"function": "powerline.segments.common.time.date",
+				"name": "time",
+				"args": {
+					"format": "%I:%M %P",
+					"istime": true
+				}
+			},
+			{
+				"function": "powerline_modules.network_symbol",
+				"args": {
+					"interface": "default_gateway"
+				}
+			},
+			{
+				"function": "powerline_modules.volume"
+			},
+			{
+				"function": "powerline_modules.brightness"
+			},
+			{
+				"function": "powerline_modules.battery"
+			},
+			{
+				"function": "powerline_modules.screenkey"
+			}
+		]
+	}
+}

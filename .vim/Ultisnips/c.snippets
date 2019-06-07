@@ -42,6 +42,12 @@ snippet def "#define" b
 #define ${1:DEFAULT}
 endsnippet
 
+snippet ifdef "#ifdef" b
+#ifdef ${1:CONDITION}
+${0:${VISUAL}}
+#endif
+endsnippet
+
 # Don't want to include cpp files
 snippet Inc "Include this header" b
 #include "${0:`!v expand("%:t:r").".h"`}"

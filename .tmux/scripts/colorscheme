@@ -1,0 +1,10 @@
+#!/bin/sh
+
+if [ -z "$1" ]; then
+	COLORSCHEME=default
+else
+	COLORSCHEME="$1"
+fi
+
+tmux set-environment -g POWERLINE_CONFIG_OVERRIDES ext.tmux.colorscheme="$COLORSCHEME"
+tmux source ~/.tmux/status

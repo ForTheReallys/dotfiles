@@ -4,16 +4,15 @@ setlocal omnifunc=javacomplete#Complete
 let g:JavaComplete_SourcesPath = getcwd()
 let g:JavaComplete_LibsPath = getcwd()
 
+runtime ftplugin/c-based.vim
 iabbrev <buffer> improt import
-iabbrev <buffer> elif else if
 iabbrev <buffer> string String
 iabbrev <buffer> bool boolean
 iabbrev <buffer> fnotfound FileNotFoundException
-iabbrev <buffer> vodi void
 
-inoremap <silent> <expr> <buffer> ; ForTheReallys#Skip(';')
 nnoremap <buffer> K :<C-u>call JavaHelp()<CR>
 nmap <buffer> <Leader>jr <Plug>(JavaComplete-Imports-RemoveUnused)
+compiler javac
 
 function! JavaHelp(...)
     let l:search = ''

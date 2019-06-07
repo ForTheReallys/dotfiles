@@ -1,0 +1,40 @@
+#!/bin/sh
+# Spelling mistakes
+alias sl=ls
+alias cls=clear
+alias clclear=clear # I do this more often than you might think
+alias mkae='make'
+alias vvim='vim'
+
+# run programs with special options
+alias gdb='gdb -q'
+alias sudo='sudo -E'
+
+# just for convenience
+alias ll='ls -l'
+alias la='ls -a'
+alias yt='youtube'
+
+# radare aliases (just removed the 2)
+alias rabin='rabin2'
+alias radare='radare2'
+alias radiff='radiff2'
+alias rafind='rafind2'
+alias ragg='ragg2'
+alias rahash='rahash2'
+alias rarun='rarun2'
+alias rasm='rasm2'
+alias rax='rax2'
+
+# Miscellaneous
+alias topdf='libreoffice --convert-to pdf'
+alias open='rifle' # ranger's file manager
+
+# colors
+alias ls='ls -h --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+
+# environment
+alias update_env='. ~/.shell/common/functions/update_environment'

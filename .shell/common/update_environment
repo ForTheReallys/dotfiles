@@ -1,3 +1,5 @@
+#!/bin/sh
+
 # portable (as far as I know) script to reload environment variables from tmux
 # into the shell
 

@@ -1,0 +1,4 @@
+# reload environment from client
+switch-client
+
+# vim: set ft=tmux:

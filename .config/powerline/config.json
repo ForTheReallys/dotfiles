@@ -46,7 +46,7 @@
 		},
 		"wm": {
 			"colorscheme": "default",
-			"theme": "simple",
+			"theme": "i3bar",
 			"update_interval": 1
 		}
 	}

@@ -1,7 +1,11 @@
+# include everything that doesn't have a .i3 extension
 include ~/.config/i3/config_files/*[^\.i3]
+include sway_specific
+
+hide_edge_borders --i3 both
 
 output * {
-	background ~/.background fit
+	bg ~/.background fill
 }
 
 input * {
@@ -16,7 +20,13 @@ input 2:14:ETPS/2_Elantech_Touchpad {
 
 bar {
 	position top
-	font 8
+	# status_command /usr/lib/python3.7/site-packages/powerline/bindings/i3/powerline-i3.py
+	font pango:Droid Sans Mono For Powerline 9
 }
+
+for_window [shell=".*"] title_format "%title :: %shell"
+
+bindsym $Alt+Shift+Escape seat * pointer_constraint escape
+# exec waybar
 
 # vim: ft=conf:

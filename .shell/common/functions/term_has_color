@@ -1,0 +1,13 @@
+#!/bin/sh
+
+term_has_color() {
+	case "$TERM" in
+		*color*) return 0;;
+	esac
+
+	if [ -x /usr/bin/tput ]; then
+		colors=$(tput colors 2> /dev/null)
+		[ "$colors" -ge 8 ] && return 0
+	fi
+	return 1
+}

@@ -1,4 +1,8 @@
 # Startup
 
 # on startup
+font pango: Monospace 8
+
 exec $script_dir/startup.sh
+# go straight to MY first workspace
+exec --no-startup-id i3-msg workspace $work_term

@@ -1,0 +1,9 @@
+#!/bin/sh
+
+color_off() {
+	tmux set default-terminal xterm
+}
+
+color_on() {
+	tmux set default-terminal tmux-256color
+}

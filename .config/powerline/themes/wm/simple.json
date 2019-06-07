@@ -61,14 +61,6 @@
 				}
 			},
 			{
-				"function": "powerline.segments.common.net.internal_ip",
-				"args": {
-					"interface": "wlp0s20f0u2"
-				},
-				"draw_soft_divider": false,
-				"before": " "
-			},
-			{
 				"function": "powerline_modules.volume"
 			},
 			{
