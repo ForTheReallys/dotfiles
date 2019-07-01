@@ -1,3 +1,9 @@
+# st supports truecolor
+set -ga terminal-overrides "st*:Tc"
+
+run-shell $TMUX_SCRIPT_DIR/startup.sh
+
+# start the first session since we've opened another session for music
 new-session -s 0
 
 # vim: set filetype=tmux:

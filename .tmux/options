@@ -1,8 +1,7 @@
 TMUX_SCRIPT_DIR=$HOME/.tmux/scripts
 run-shell "tmux set-env -g TMUX_VERSION $(tmux -V | cut -d' ' -f2)"
 
-set default-terminal tmux-256color
-set -ga terminal-overrides ",st*:Tc"
+set -g default-terminal tmux-256color
 set -g escape-time 0
 set -g display-time 2000
 set -g prefix C-Space
@@ -16,7 +15,9 @@ set -g set-titles on
 set -g mode-keys vi
 set -g xterm-keys on
 
-# update the environment every time a new client is attached
-set -g update-environment "SWAYSOCK I3SOCK WAYLAND_DISPLAY DISPLAY"
+# update the environment every time a new client is attached (or `switch-client` is executed)
+set -g update-environment "SWAYSOCK I3SOCK WAYLAND_DISPLAY DISPLAY TERM"
+
+set -g clock-mode-style 12
 
 # vim: set filetype=tmux:

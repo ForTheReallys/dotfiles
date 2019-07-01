@@ -27,6 +27,7 @@ if has("linebreak")
 		set breakindentopt=shift:2          "indented by 2 spaces
 	endif
 	set showbreak=↳                     "DOWNWARDS ARROW WITH TIP RIGHTWARDS (U+21B3, UTF-8: E2 86 B3)
+	set linebreak
 endif
 
 if has("mksession")

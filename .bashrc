@@ -2,52 +2,44 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-[ -r ~/.environment ] && . ~/.environment
-
 # If not running interactively, don't do anything
 case $- in
-	*i*) ;;
+	*i*)
+	;;
 	*) return;;
 esac
 
-# don't put duplicate lines or lines starting with space in the history.
-HISTCONTROL=ignoreboth
 
-# append to the history file, don't overwrite it
-shopt -s histappend
-
-# for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
 HISTSIZE=1000
 HISTFILESIZE=2000
+HISTCONTROL=ignoreboth
 
-# check the window size after each command and, if necessary,
-# update the values of LINES and COLUMNS.
+shopt -s histappend
 shopt -s checkwinsize
-
-# If set, the pattern "**" used in a pathname expansion context will
-# match all files and zero or more directories and subdirectories.
 shopt -s globstar
 
-# set variable identifying the chroot you work in (used in the prompt below)
-if [ -z "${debian_chroot:-}" ] && [ -r /etc/debian_chroot ]; then
-	debian_chroot=$(cat /etc/debian_chroot)
-fi
+shopt -s autocd cdspell
 
-# color prompt if we have it
-color_prompt=y
+# load any private configurations (not shared in my dotfiles)
+[ -r ~/.private/shell/common ] && . ~/.private/shell/common
+[ -r ~/.private/shell/bash ]   && . ~/.private/shell/bash
 
-if [ -z "$color_prompt" ]; then
-		. ~/.shell/color
-		terminal_has_color && color_prompt=y
-fi
+for i in ~/.shell/common/functions/*; do
+	[ ! -d ~/.shell/common/functions/$i ] && . $i
+done
 
-PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-[ "$color_prompt" = y ] && PS1='${debian_chroot:+($debian_chroot)}\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+term_has_color && color_prompt=y
+#color_prompt=y # uncomment to force color
+
+PS1='\u@\h:\w\$ '
+[ "$color_prompt" = y ] && PS1='\[\033[01;31m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 unset color_prompt
 
 # Alias definitions.
-[ -f ~/.bash_aliases ] && . ~/.bash_aliases
+[ -r ~/.shell/common/aliases ] && . ~/.shell/common/aliases
+
 
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -76,7 +68,7 @@ if [[ $RUN_WINDOWS_CMDS -ne 0 ]]; then
 		which "$WIN_CMD" &> /dev/null
 		if [[ $? -eq 0 ]]; then
 			echo "Using windows executable"
-			"$WIN_CMD"
+			eval $WIN_CMD
 		else
 			true
 			# call original one

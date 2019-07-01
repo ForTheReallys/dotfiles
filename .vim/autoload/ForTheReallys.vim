@@ -1,26 +1,12 @@
 let s:colorschemes = ["default", "solarized"]
 let s:currentScheme = 0
 
+"-1 or 1 for backwards or forwards respectively
 function! ForTheReallys#ToggleColorschemes(direction)
-	if a:direction == 1
-		let s:currentScheme = s:currentScheme+1 == len(s:colorschemes) ? 0 : s:currentScheme + 1
-	elseif a:direction == 0
-		let s:currentScheme = s:currentScheme == 0 ? len(s:colorschemes)-1 : s:currentScheme - 1
-	endif
-
+	let s:currentScheme = (s:currentScheme + a:direction) % len(s:colorschemes)
 	execute "colorscheme " . s:colorschemes[s:currentScheme]
 endfunction
 
-function! ForTheReallys#TogglePHPhtml()
-	if &filetype == 'html'
-		set filetype=php
-	elseif &filetype == 'php'
-		set filetype=html
-	else
-		return
-	endif
-endfunction
-"
 "skip any char I want.
 function! ForTheReallys#Skip(char)
 	let nextchar = getline('.')[col('.')-1]

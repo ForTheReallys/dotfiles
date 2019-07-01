@@ -16,4 +16,4 @@ nnoremap <silent> sf :<C-u>call ForTheReallys#TogglePHPhtml()<CR>
 nnoremap \s :colorscheme solarized<CR>
 nnoremap \d :colorscheme default<CR>
 nnoremap <expr> \\  ForTheReallys#ToggleColorschemes(1)
-nnoremap <expr> \|\| ForTheReallys#ToggleColorschemes(0)
+nnoremap <expr> \|\| ForTheReallys#ToggleColorschemes(-1)

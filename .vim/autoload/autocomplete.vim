@@ -8,17 +8,10 @@ function! autocomplete#setup_mappings()
     execute printf('inoremap <buffer> <silent> %s <C-R>=autocomplete#expand_or_jump("P")<CR>', g:UltiSnipsJumpBackwardTrigger)
     execute printf('snoremap <buffer> <silent> %s <Esc>:call autocomplete#expand_or_jump("P")<CR>', g:UltiSnipsJumpBackwardTrigger)
 
-    "one additional mapping of our own: accept completion with <CR>.
-    imap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-    smap <expr> <buffer> <silent> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
-
     let s:expansion_active = 1
 endfunction
 
 function! autocomplete#teardown_mappings()
-    silent! iunmap <expr> <buffer> <CR>
-    silent! sunmap <expr> <buffer> <CR>
-
     let s:expansion_active = 0
 endfunction
 

@@ -1,21 +1,6 @@
-if has("cmdline_hist") && has("vertsplit")
-	xnoremap : q:
-endif
-
-if has("xterm_clipboard")
-	"yanking and pasting from clipboard
-	xmap <Leader>y "+y
-	xmap <Leader>Y "+Y
-endif
-
 "for visual blocks
 xnoremap + g<C-a>
 xnoremap - g<C-x>
-
-"like page up and page down but move the cursor
-"to the top or bottom before acting like those keys
-xnoremap <silent> <expr> H ForTheReallys#UP()
-xnoremap <silent> <expr> L ForTheReallys#DOWN()
 
 "remove all unnecessary white space
 xnoremap ss :s/\s*$//g<CR>
@@ -41,3 +26,8 @@ xnoremap <silent> R :call ForTheReallys#ReverseLines()<CR>
 
 " Folds with Enter
 xnoremap <expr> <CR> VisualToggleFolds()
+
+"like page up and page down but move the cursor
+"to the top or bottom before acting like those keys
+xnoremap <silent> <expr> H ForTheReallys#UP()
+xnoremap <silent> <expr> L ForTheReallys#DOWN()

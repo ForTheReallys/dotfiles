@@ -1,4 +1,5 @@
-source ~/.vim/pack/bundle/start/vim-solarized8/colors/solarized8_dark.vim
+set bg=dark
+source ~/.vim/pack/bundle/start/vim-solarized8/colors/solarized8.vim
 source ~/.vim/colors/all.vim
 
 " make all keywords bold

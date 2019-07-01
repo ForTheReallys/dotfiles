@@ -1,1 +1,1 @@
-.vim/after/plugin/vimrc.vim
+colorscheme default
