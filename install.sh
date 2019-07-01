@@ -7,7 +7,6 @@ else
 fi
 
 files_in_danger=".vim
-.vimrc
 .bash_aliases
 .bash_profile
 .bashrc
