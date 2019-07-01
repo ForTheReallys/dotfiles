@@ -1,27 +1,31 @@
 if has("browse")
 	call browse#CreateMappings()
+	delfunction browse#CreateMappings
 endif
 
 if has("windows")
 	call windows#CreateMappings()
-	if has("vertsplit")
-		call windows#CreateVertMappings()
-		if has("cmdline_hist")
-			call windows#CreateCmdWinMappings()
-		endif
-	endif
+	delfunction windows#CreateMappings
 endif
 
 if has("xterm_clipboard")
 	call X#CreateClipboardMappings()
+	delfunction X#CreateClipboardMappings
 endif
 
 if has("folding")
 	call folds#CreateFoldingMappings()
+	delfunction folds#CreateFoldingMappings
 endif
 
 if has("mksession")
 	call sessions#CreateMappings()
+	delfunction sessions#CreateMappings
+endif
+
+if has("terminal")
+	call terminal#CreateMappings()
+	delfunction terminal#CreateMappings
 endif
 
 nnoremap cc C

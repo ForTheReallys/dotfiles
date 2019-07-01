@@ -5,7 +5,7 @@ function! windows#CreateMappings()
 	nnoremap gfe         :<C-u>execute "edit ".expand('<cfile>')<CR>
 
 	"some tab stuff
-	nnoremap <Leader><Tab> :tabnew
+	nnoremap <Leader><Tab> :tabnew<CR>
 	nnoremap <silent> <S-Tab> gT
 	nnoremap <silent> <Tab> gt
 
@@ -19,24 +19,20 @@ function! windows#CreateMappings()
 	nnoremap gJ <C-w>J
 	nnoremap gK <C-w>K
 	nnoremap gL <C-w>L
-	"open new windows without worrying about the names
+
 	nnoremap <Leader>n <C-w>n
-	"give me a chance to enter a name
-	nnoremap <Leader>N :split 
 
 	nnoremap <C-S-k> <C-w>+
 	nnoremap <C-S-j> <C-w>-
 	nnoremap <C-S-h> <C-w>>
 	nnoremap <C-S-l> <C-w><
-endfunction
 
-function! windows#CreateVertMappings()
-	nnoremap gfv :<C-u>execute "vsplit ".expand('<cfile>')<CR>
-	nnoremap <Leader>V :vsplit 
-	nnoremap <Leader>v <C-w>v
-endfunction
-
-function! windows#CreateCmdWinMappings()
-	nnoremap : q:
-	xnoremap : q:
+	if has("vertsplit")
+		nnoremap gfv :<C-u>execute "vsplit ".expand('<cfile>')<CR>
+		nnoremap <Leader>v <C-w>v
+		if has("cmdline_hist")
+			nnoremap : q:
+			xnoremap : q:
+		endif
+	endif
 endfunction
