@@ -37,9 +37,6 @@
 [submodule ".vim/packages/vim-nerdtree-tabs"]
 	path = .vim/packages/vim-nerdtree-tabs
 	url = https://github.com/jistr/vim-nerdtree-tabs
-[submodule ".vim/packages/vim-erlang-skeletons"]
-	path = .vim/packages/vim-erlang-skeletons
-	url = https://github.com/marutha/vim-erlang-skeletons
 [submodule ".vim/packages/vim-solarized8"]
 	path = .vim/packages/vim-solarized8
 	url = https://github.com/lifepillar/vim-solarized8
