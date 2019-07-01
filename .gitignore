@@ -9,3 +9,4 @@
 .vim/pythonx/__pycache__/my_ultisnips.cpython-36.pyc
 .vim/*.swp
 .vim/.netrwhist
+.vimrc
