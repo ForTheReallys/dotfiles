@@ -49,3 +49,6 @@
 [submodule ".vim/packages/vim-skeletons"]
 	path = .vim/packages/vim-skeletons
 	url = https://github.com/pgilad/vim-skeletons
+[submodule ".vim/packages/coc.nvim"]
+	path = .vim/packages/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
