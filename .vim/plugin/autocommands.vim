@@ -1,6 +1,24 @@
-if !has("autocmd")
-	finish
-endif
+function s:PreLoad(eventName)
+	let plugin = matchstr(a:eventName, 'PreLoad-\zs.*')
+	let plugin = substitute(plugin, "-", "_", "g")
+	if strlen(plugin)
+		execute printf("silent! call plugins#%s#PreLoad()", plugin)
+	endif
+endfunction
+
+function s:PostLoad(eventName)
+	let plugin = matchstr(a:eventName, 'PostLoad-\zs.*')
+	let plugin = substitute(plugin, "-", "_", "g")
+	if strlen(plugin)
+		execute printf("silent! call plugins#%s#PostLoad()", plugin)
+	endif
+endfunction
+
+augroup Plugins
+	autocmd!
+	autocmd User * call s:PreLoad(expand("<afile>"))
+	autocmd User * call s:PostLoad(expand("<afile>"))
+augroup end
 
 augroup CmdLine
 	autocmd!
@@ -14,8 +32,8 @@ augroup end
 
 augroup Ultisnips
 	autocmd!
-	autocmd User UltiSnipsEnterFirstSnippet call autocomplete#setup_mappings()
-	autocmd User UltiSnipsExitLastSnippet call autocomplete#teardown_mappings()
+	"autocmd User UltiSnipsEnterFirstSnippet call autocomplete#setup_mappings()
+	"autocmd User UltiSnipsExitLastSnippet call autocomplete#teardown_mappings()
 augroup end
 
 augroup DirectoryFT
