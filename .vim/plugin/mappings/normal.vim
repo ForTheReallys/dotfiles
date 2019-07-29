@@ -28,6 +28,13 @@ if has("terminal")
 	delfunction terminal#CreateMappings
 endif
 
+if has("quickfix")
+	nnoremap <Up> :cprevious<CR>
+	nnoremap <Down> :cnext<CR>
+	nnoremap <S-Up> :lprevious<CR>
+	nnoremap <S-Down> :lnext<CR>
+endif
+
 nnoremap cc C
 nnoremap <Leader>fd :<C-u>filetype detect<CR>
 
@@ -76,3 +83,6 @@ nnoremap <silent> gP :<C-u>call PrintLine("P")<CR>
 "to the top or bottom before acting like those keys
 nnoremap <silent> <expr> H ForTheReallys#UP()
 nnoremap <silent> <expr> L ForTheReallys#DOWN()
+
+nnoremap <C-f> :bnext<CR>
+nnoremap <C-b> :bprevious<CR>

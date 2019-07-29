@@ -6,8 +6,8 @@ function! windows#CreateMappings()
 
 	"some tab stuff
 	nnoremap <Leader><Tab> :tabnew<CR>
-	nnoremap <silent> <S-Tab> gT
-	nnoremap <silent> <Tab> gt
+	nnoremap <silent> <Left> gT
+	nnoremap <silent> <Right> gt
 
 	"moving between windows
 	nnoremap gh <C-w>h
