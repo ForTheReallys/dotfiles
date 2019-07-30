@@ -94,10 +94,10 @@ main() {
 setup_links() {
 	DOTDIR=$PWD
 	while read file; do
-		LINK_LOCATION=$(basename "$HOME/$i")
-		DOTFILE=$(basename "$DOTDIR/$i")
+		LINK_LOCATION=$(basename "$HOME/$file")
+		DOTFILE="$DOTDIR/$file"
 
-		if [ -d "$LINK_LOCATION" ]; then
+		if [ ! -d "$LINK_LOCATION" ]; then
 			mkdir -pv "$LINK_LOCATION"
 		fi
 		cd "$LINK_LOCATION"
