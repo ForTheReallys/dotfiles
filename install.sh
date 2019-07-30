@@ -92,20 +92,17 @@ main() {
 }
 
 setup_links() {
-	while read i
-	do
-		LINK="$HOME/$i"
-		DOTFILE="$PWD/$i"
+	DOTDIR=$PWD
+	while read file; do
+		LINK_LOCATION=$(basename "$HOME/$i")
+		DOTFILE=$(basename "$DOTDIR/$i")
 
-		# if this fails, try to create the mising directories and try try again
-		if ! ln -Tvsf "$DOTFILE" "$LINK"; then
-			DIR=$(dirname "$LINK")
-			mkdir -pv "$DIR"
-
-			if ! ln -Tvsf "$DOTFILE" "$LINK"; then
-				error "Something went wrong, skipping $LINK"
-			fi
+		if [ -d "$LINK_LOCATION" ]; then
+			mkdir -pv "$LINK_LOCATION"
 		fi
+		cd "$LINK_LOCATION"
+
+		ln -vsf "$DOTFILE"
 	done << EOF
 	$files_in_danger
 EOF
