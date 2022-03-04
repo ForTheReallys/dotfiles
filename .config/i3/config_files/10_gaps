@@ -2,8 +2,7 @@
 
 # i3 gaps
 smart_gaps on
-hide_edge_borders both
-for_window [class="^.*"] border pixel 0
+hide_edge_borders none
 
 for_window [workspace=$work_office] gaps inner current set 10; gaps outer current set 0
 

@@ -22,7 +22,7 @@ bindsym $Alt+Return exec --no-startup-id $term
 bindsym $Alt+Shift+Return exec $browser
 
 # start rofi (a program launcher)
-bindsym $Alt+d exec rofi -show run
+bindsym $Alt+d exec rofi -show drun
 bindsym $Alt+w exec rofi -show window
 
 # find or start window
