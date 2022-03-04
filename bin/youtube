@@ -44,11 +44,15 @@ fi
 
 Title=$(ls -1c | head -1)
 
-mv "$Title"* "$2.mp3"
-
 # start an interactive prompt to set artist and other stuff
-if has mp3info
-then
-	mp3info "$2.mp3" -t "$2"
-	mp3info "$2.mp3" -i
-fi
+read -p "Artist: " artist
+read -p "Album: " album
+read -p "Track: " track
+
+ffmpeg -f mp3 -i "$Title" \
+	-metadata title="$2" \
+	-metadata artist="$artist" \
+	-metadata album="$album" \
+	-metadata track="$track" \
+	-c copy \
+	"$2.mp3"
