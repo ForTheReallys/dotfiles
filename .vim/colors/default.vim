@@ -11,27 +11,23 @@ endif
 
 hi clear
 
-highlight link EndOfBuffer NonText
-highlight link Search Visual
-highlight link QuickFixLine Search
-highlight link YcmWarningSection Todo
-highlight link YcmErrorSection Error
-
+highlight Normal              guibg=Black guifg=White
 highlight SpecialKey          term=bold ctermfg=4 guifg=Blue
-highlight NonText             term=bold ctermfg=12 gui=bold guifg=Blue
+highlight NonText             term=bold ctermfg=4 guifg=Blue
 highlight Directory           term=bold ctermfg=4 guifg=Blue
 highlight ErrorMsg            term=standout ctermfg=15 ctermbg=1 guifg=White guibg=Red
+highlight Search              term=reverse ctermbg=4 ctermfg=7 cterm=None
 highlight IncSearch           term=reverse cterm=reverse gui=reverse
 highlight MoreMsg             term=bold ctermfg=2 gui=bold guifg=SeaGreen
 highlight ModeMsg             term=bold cterm=bold gui=bold
-highlight LineNr              term=underline ctermfg=25 guifg=Brown
-highlight CursorLineNr        term=bold ctermfg=226 gui=bold guifg=Brown
+highlight LineNr              term=None ctermfg=4 guifg=Blue
+highlight CursorLineNr        term=None cterm=None ctermfg=11 gui=bold guifg=Brown
 highlight Question            term=standout ctermfg=2 gui=bold guifg=SeaGreen
 highlight StatusLine          term=bold,reverse cterm=bold,reverse gui=bold,reverse
 highlight StatusLineNC        term=reverse cterm=reverse gui=reverse
-highlight VertSplit           term=None cterm=None gui=None ctermbg=white
+highlight VertSplit           term=None ctermbg=white gui=None guibg=White
 highlight Title               term=bold ctermfg=5 gui=bold guifg=Magenta
-highlight Visual              term=reverse cterm=None ctermbg=17 guibg=LightGrey
+highlight Visual              term=reverse cterm=None ctermbg=4 ctermfg=0 guibg=#00005f
 highlight VisualNOS           term=bold,underline cterm=bold,underline gui=bold,underline
 highlight WarningMsg          term=standout ctermfg=1 guifg=Red
 highlight WildMenu            term=standout ctermfg=0 ctermbg=11 guifg=Black guibg=Yellow
@@ -66,6 +62,11 @@ highlight ToolbarLine         term=underline ctermbg=7 guibg=LightGrey
 highlight ToolbarButton       cterm=bold ctermfg=15 ctermbg=242 gui=bold guifg=White guibg=Grey40
 highlight Error               term=reverse ctermfg=15 ctermbg=9 guifg=White guibg=Red
 highlight Todo                term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
+
+highlight link EndOfBuffer NonText
+highlight link QuickFixLine Search
+highlight link YcmWarningSection Todo
+highlight link YcmErrorSection Error
 
 " now my configuration
 source ~/.vim/colors/all.vim
