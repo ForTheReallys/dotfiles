@@ -56,3 +56,5 @@ ffmpeg -f mp3 -i "$Title" \
 	-metadata track="$track" \
 	-c copy \
 	"$2.mp3"
+
+rm "$Title"
