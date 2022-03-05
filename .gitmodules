@@ -58,3 +58,6 @@
 [submodule ".vim/pack/dev-extra/packages/vim-lsp"]
 	path = .vim/pack/dev-extra/packages/vim-lsp
 	url = https://github.com/prabirshrestha/vim-lsp
+[submodule ".vim/pack/dev-extra/packages/asyncomplete-ultisnips.vim"]
+	path = .vim/pack/dev-extra/packages/asyncomplete-ultisnips.vim
+	url = https://github.com/prabirshrestha/asyncomplete-ultisnips.vim
