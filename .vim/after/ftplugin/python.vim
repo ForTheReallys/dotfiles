@@ -6,6 +6,7 @@ inoremap <silent> <expr> <buffer> : ForTheReallys#Skip(':')
 inoremap <buffer> ++ <Space>+= 1
 inoremap <buffer> -- <Space>-= 1
 
+setlocal tabstop=8
 setlocal shiftwidth=8
 setlocal softtabstop=0
 setlocal noexpandtab
