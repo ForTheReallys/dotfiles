@@ -10,6 +10,7 @@ files_in_danger=".vim
 .bash_aliases
 .bash_profile
 .bashrc
+.environment
 bin/my_tmux
 bin/youtube
 $CONFIG/cmus/rc
