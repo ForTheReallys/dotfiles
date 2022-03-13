@@ -43,6 +43,7 @@ for_window [workspace=$work_browser] layout tabbed
 for_window [title="^Music$"] floating enable
 for_window [title="^Music$"] move scratchpad
 for_window [title="^Music$"] sticky enable
+for_window [title="^Music$"] resize set 644 508
 
 # computer science
 for_window [title="^Turnkey"] move scratchpad

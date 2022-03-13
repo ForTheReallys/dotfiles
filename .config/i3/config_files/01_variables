@@ -27,10 +27,10 @@ set $hdmi_output HDMI-1
 set $LaTeX ~/Documents/latex
 # application variables
 set $browser        qutebrowser
-set $term           st
+set $term           alacritty
 set $calc           gnome-calculator
 set $cal            gnome-calendar
-set $taskmgr        st -e htop
+set $taskmgr        alacritty -e htop
 set $CS             virtualbox --startvm 'Turnkey LAMP'
 set $arandr         arandr
 set $settings       gnome-control-center

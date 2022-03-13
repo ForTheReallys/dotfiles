@@ -2,7 +2,7 @@
 
 # starting our applications
 bindsym $Super+c                exec $calc
-bindsym $Super+m                exec $term -T Music -e tmux attach-session -t Music
+bindsym $Super+m                exec $term -t Music -e tmux attach-session -t Music
 bindsym $Super+Shift+c          exec $cal
 bindsym $Super+b                exec $CS
 bindsym $Super+Shift+Escape     exec $taskmgr
