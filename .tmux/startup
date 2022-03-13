@@ -1,5 +1,6 @@
 # st supports truecolor
 set -ga terminal-overrides "st*:Tc"
+set -ga terminal-overrides ",xterm-256color:RGB"
 
 run-shell $TMUX_SCRIPT_DIR/startup.sh
 

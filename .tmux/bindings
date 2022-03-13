@@ -46,6 +46,7 @@ bind-key ? list-keys
 bind-key s setw synchronize-panes
 bind-key i new-session
 bind-key S choose-session
+bind-key m set mouse
 
 # toggle read only
 bind-key R switch-client -r
