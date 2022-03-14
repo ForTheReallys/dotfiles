@@ -21,6 +21,8 @@ $CONFIG/mpv/mpv.conf
 $CONFIG/nvim
 $CONFIG/powerline
 $CONFIG/qutebrowser/config.py
+$CONFIG/waybar/config
+$CONFIG/waybar/style
 .gdbinit
 .gvimrc
 .inputrc

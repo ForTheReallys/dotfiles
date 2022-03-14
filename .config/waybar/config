@@ -1,0 +1,35 @@
+{
+	"layer": "bottom",
+	"height": "16",
+	"modules-left": ["sway/workspaces", "sway/mode"],
+	"modules-center": ["sway/window"],
+	"modules-right": ["clock", "network", "pulseaudio", "custom/brightness", "battery", "tray"],
+
+	"clock": {
+		"format": "{:%b %d %Y %I:%M %p}",
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+		"on-click": "gnome-calendar"
+	},
+	"pulseaudio": {
+		"format": "{volume}% {icon}",
+		"format-muted": "Muted \uf6a9",
+		"format-icons": {
+			"headphones": "",
+			"default": ["", "", ""]
+		},
+		"on-click": "pavucontrol"
+	},
+	"network": {
+		"format-ethernet": "{ifname} \uf0e8",
+		"format-wifi": "{ifname} ",
+		"format-disconnected": "Disconnected ⚠"
+	},
+	"battery": {
+		"format": "{icon} {capacity}%",
+		"format-icons": ["", "", "", "", ""]
+	},
+	"tray": {
+		// "icon-size": 21,
+		"spacing": 10
+	}
+}
