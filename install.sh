@@ -14,6 +14,7 @@ files_in_danger=".vim
 bin/my_tmux
 bin/youtube
 $CONFIG/cmus/rc
+$CONFIG/alacritty/alacritty.yml
 $CONFIG/i3
 $CONFIG/mpv/input.conf
 $CONFIG/mpv/mpv.conf
