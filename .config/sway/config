@@ -27,12 +27,22 @@ bar {
 	font pango:Droid Sans Mono For Powerline 9
 }
 
-for_window [shell=".*"] title_format "%title :: %shell"
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
-bindsym --no-warn $Super+v exec "/home/alex/repos/LookingGlass/looking-glass-B5-286-7c2d493b/client/build/looking-glass-client audio:periodSize=512 audio:bufferLatency:0"
+for_window [shell=".*"] title_format "%title :: %shell"
+# for_window [app_id="pavucontrol"] move position 30 ppt 30 ppt
+for_window [app_id="pavucontrol"] floating enable
+# for_window [app_id="pavucontrol"] resize set width 600 px height 600 px
+
+bindsym --no-warn $Super+v exec "/home/alex/repos/LookingGlass/looking-glass-B5-286-7c2d493b/client/build/looking-glass-client audio:periodSize=512 audio:bufferLatency:0 input:autoCapture=yes input:grabKeyboardOnFocus=yes"
 bindsym $Alt+p exec tessen
-bindsym $Alt+Escape exec sudo swap-keybinds
-bindsym $Alt+g floating_modifier none
-bindsym $Alt+Shift+g floating_modifier $Alt
+
+# Gaming mode
+bindsym $Alt+g exec sudo swap-keybinds ; floating_modifier none
+bindsym $Alt+Shift+g exec sudo swap-keybinds swap ; floating_modifier $Alt
+
+exec mako
+exec /usr/lib/kdeconnectd
+exec kdeconnect-indicator
 
 # vim: ft=conf:

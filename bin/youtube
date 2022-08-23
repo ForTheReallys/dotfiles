@@ -11,7 +11,7 @@ download() {
 		QUALITY="worstaudio"
 	fi
 
-	youtube-dl "$1" -x --audio-format mp3 -f $QUALITY
+	youtube-dl "$1" -x --audio-format opus -f $QUALITY
 }
 
 # find executable
@@ -25,10 +25,10 @@ if [ $# -lt 2 ]; then
 	exit 1
 fi
 
-cd ~/Music
+cd ~/Music/new
 
-if [ -f "$2".mp3 ]; then
-	echo 2>&1 "$2".mp3 already exists
+if [ -f "$2".mka ]; then
+	echo 2>&1 "$2".mka already exists
 	exit 1
 fi
 
@@ -49,12 +49,12 @@ read -p "Artist: " artist
 read -p "Album: " album
 read -p "Track: " track
 
-ffmpeg -f mp3 -i "$Title" \
+ffmpeg -i "$Title" \
 	-metadata title="$2" \
 	-metadata artist="$artist" \
 	-metadata album="$album" \
 	-metadata track="$track" \
 	-c copy \
-	"$2.mp3"
+	"$2.mka"
 
 rm "$Title"

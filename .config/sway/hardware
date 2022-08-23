@@ -1,15 +1,23 @@
-set $vertical_output "Unknown ASUS VP249 0x0000B328"
+# set $left_output "Unknown ASUS VP249 0x0000B328"
+set $left_output "ASUSTek COMPUTER INC ASUS VP249 0x0000B328"
 set $main_output "Dell Inc. DELL S2522HG 75RJ1C3"
+set $vfio_output "HDMI-A-1"
 
-output $vertical_output {
+bindsym Shift+$Alt+f fullscreen toggle global
+
+output $left_output {
 	position 0 0
 	mode 1920x1080@144Hz
-	transform 270
 }
 
 output $main_output {
-	position 1080 480
+	position 1920 0
 	mode 1920x1080@240Hz
 }
 
+output $vfio_output disable
+
 input * accel_profile flat
+
+bindsym Pause output '*' dpms on
+bindsym Shift+Pause output '*' dpms off

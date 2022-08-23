@@ -16,6 +16,7 @@ bin/youtube
 $CONFIG/cmus/rc
 $CONFIG/alacritty/alacritty.yml
 $CONFIG/i3
+$CONFIG/sway
 $CONFIG/mpv/input.conf
 $CONFIG/mpv/mpv.conf
 $CONFIG/nvim
