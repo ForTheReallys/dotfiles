@@ -95,13 +95,13 @@ main() {
 	echo
 	install_ycm
 
-	ln -s $DIR/.config/nvchad-custom $DIR/.config/nvim/lua/custom
+	ln -s $PWD/.config/nvchad-custom $DIR/.config/nvim/lua/custom
 }
 
 setup_links() {
 	DOTDIR=$PWD
 	while read file; do
-		LINK_LOCATION=$(basename "$HOME/$file")
+		LINK_LOCATION=$(dirname "$HOME/$file")
 		DOTFILE="$DOTDIR/$file"
 
 		if [ ! -d "$LINK_LOCATION" ]; then
