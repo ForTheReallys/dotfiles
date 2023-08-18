@@ -95,7 +95,7 @@ main() {
 	echo
 	install_ycm
 
-	ln -s $PWD/.config/nvchad-custom $DIR/.config/nvim/lua/custom
+	ln -s $PWD/.config/nvchad-custom $PWD/.config/nvim/lua/custom
 }
 
 setup_links() {
