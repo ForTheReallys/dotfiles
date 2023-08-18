@@ -94,6 +94,8 @@ main() {
 	install_command_t
 	echo
 	install_ycm
+
+	ln -s $DIR/.config/nvchad-custom $DIR/.config/nvim/lua/custom
 }
 
 setup_links() {
