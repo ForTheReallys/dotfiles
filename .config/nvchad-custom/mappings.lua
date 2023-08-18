@@ -81,7 +81,7 @@ M.general = {
     ["ss"] = { "<cmd> s/\\s*$//g <CR>", "Remove trailing whitespace"},
 
     ["<"] = { "<gv" },
-    [">"] = { "<gv" },
+    [">"] = { ">gv" },
 
     ["'"] = { "`" },
 
