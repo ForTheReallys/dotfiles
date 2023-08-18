@@ -11,6 +11,14 @@ M.disabled = {
   },
 }
 
+M.dap = {
+  plugin = true,
+  n = {
+    ["<F5>"] = {"<cmd> DapContinue <CR>", "Start or continue debugger"},
+    ["<leader>db"] = { "<cmd> DapToggleBreakpoint <CR>", "Add a breakpoint to line"},
+  }
+}
+
 M.windows = {
   n = {
     ["gh"] = { "<C-w>h", "Go to the left window" },
