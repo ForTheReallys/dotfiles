@@ -101,15 +101,15 @@ main() {
 setup_links() {
 	DOTDIR=$PWD
 	while read file; do
-		LINK_LOCATION=$(dirname "$HOME/$file")
+		LINK_FILE="$HOME/$file"
+		LINK_DIR=$(dirname "$LINK_FILE")
 		DOTFILE="$DOTDIR/$file"
 
-		if [ ! -d "$LINK_LOCATION" ]; then
-			mkdir -pv "$LINK_LOCATION"
+		if [ ! -d "$LINK_DIR" ]; then
+			mkdir -pv "$LINK_DIR"
 		fi
-		cd "$LINK_LOCATION"
 
-		ln -vsf "$DOTFILE"
+		ln -vsf "$DOTFILE" "$LINK_FILE"
 	done << EOF
 	$files_in_danger
 EOF
