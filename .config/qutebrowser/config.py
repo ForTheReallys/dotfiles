@@ -62,7 +62,7 @@ c.auto_save.session = True
 ## Type: Dict
 c.url.searchengines = {
         'DEFAULT': 'https://duckduckgo.com/?q={}',
-	'duck': 'https://duckduckgo.com/?q={}',
+        'duck': 'https://duckduckgo.com/?q={}',
         'gh': 'https://github.com/search/?q={}',
         'go': 'https://google.com/search?q={}',
         'aw': 'https://wiki.archlinux.org/index.php?search={}',

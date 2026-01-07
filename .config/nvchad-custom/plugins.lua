@@ -41,7 +41,7 @@ local plugins = {
   {
     "rcarriga/nvim-dap-ui",
     event = "VeryLazy",
-    dependencies = "mfussenegger/nvim-dap",
+    dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"},
     config = function()
       local dap = require("dap")
       local dapui = require("dapui")
@@ -58,6 +58,9 @@ local plugins = {
     end
   },
   {
+    "hrsh7th/nvim-cmp",
+  },
+  {
     "jay-babu/mason-nvim-dap.nvim",
     event = "VeryLazy",
     dependencies = {
@@ -72,6 +75,24 @@ local plugins = {
     "mfussenegger/nvim-dap",
     config = function(_, _)
       require("core.utils").load_mappings("dap")
+    end
+  },
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = { "https://github.com/nvim-telescope/telescope-fzf-native.nvim.git", build = 'make' },
+
+    -- This is copied from nvchad's config function
+    config = function (_, opts)
+      dofile(vim.g.base46_cache .. "telescope")
+      local telescope = require "telescope"
+      telescope.setup(opts)
+
+      -- load extensions
+      for _, ext in ipairs(opts.extensions_list) do
+        vim.cmd("echom 'Loading " .. ext .. "'")
+        telescope.load_extension(ext)
+      end
+      telescope.load_extension('fzf')
     end
   },
 
