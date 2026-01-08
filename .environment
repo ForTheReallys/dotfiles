@@ -1,7 +1,9 @@
 #!/bin/sh
 
+EDITOR=$(command -v nvim) || EDITOR=$(command -v vim) || EDITOR=vi
+export EDITOR
+
 export CDPATH="./"
-export EDITOR=$(which vim)
 export RANGER_LOAD_DEFAULT_RC=false
 export PROMPT_DIRTRIM=3 # Trims the directory name in prompt
 export LESS="-Qr" # turn off the beep in man pages
