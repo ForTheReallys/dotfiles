@@ -10,3 +10,4 @@
 .vim/*.swp
 .vim/.netrwhist
 .vimrc
+common/.private/*
