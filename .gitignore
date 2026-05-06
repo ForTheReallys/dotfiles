@@ -11,3 +11,4 @@
 .vim/.netrwhist
 .vimrc
 common/.private/*
+common/.cache/fzf/*
