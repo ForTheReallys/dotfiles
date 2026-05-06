@@ -1,6 +1,0 @@
-AfterColors.vim
-auto-pairs
-vim-packload
-vim-sessionmgr
-vim-solarized8
-vim-surround

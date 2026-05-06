@@ -1,1 +1,0 @@
-../packages/asyncomplete-ultisnips.vim/
