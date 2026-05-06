@@ -1,6 +1,3 @@
 [submodule ".vim/pack/dev-extra/ack.vim"]
 	path = .vim/pack/dev-extra/ack.vim
 	url = https://github.com/mileszs/ack.vim
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/NvChad/NvChad
