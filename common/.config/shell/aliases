@@ -36,7 +36,10 @@ alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 
-# environment
-alias update_env='. ~/.shell/common/functions/update_environment'
-
 alias code='DONT_PROMPT_WSL_INSTALL=1 code --ozone-platform=wayland'
+#
+# Make my life easier
+alias c='builtin cd -- $(fzf < ~/.cache/fzf/common_dirs)'
+alias e='$EDITOR -- $(fzf < ~/.cache/fzf/common_files)'
+alias t='tmux list-sessions | cut -d: -f1 | fzf | xargs tmux switch-client -t'
+alias r='sudo rm -i -- $(fzf < ~/.cache/fzf/temporary_files)'
