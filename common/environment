@@ -1,0 +1,13 @@
+#!/bin/sh
+
+export RANGER_LOAD_DEFAULT_RC=false
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export GROFF_TMAC_PATH="~/.config/groff"
+
+if [ -n $XDG_RUNTIME_DIR ]; then
+	export XDG_RUNTIME_DIR=/run/user/$UID
+	export MPD_HOST="$XDG_RUNTIME_DIR/mpd-socket"
+fi
+
+
+export SAM_CLI_TELEMETRY=0

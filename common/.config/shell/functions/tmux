@@ -1,0 +1,11 @@
+#!/bin/sh
+
+tmux() {
+	if [ $# -gt 0 ]; then
+		command tmux "$@"
+	elif [ -z "$TMUX" ] || command tmux has-session 2> /dev/null; then
+		command tmux a
+	else
+		command tmux
+	fi
+}
