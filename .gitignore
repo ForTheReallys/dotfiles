@@ -10,5 +10,7 @@
 .vim/*.swp
 .vim/.netrwhist
 .vimrc
-common/.private/*
+common/.private/shell/common/aliases
+common/.private/shell/common/functions
+common/.private/shell/bash/aliases
 common/.cache/fzf/*
