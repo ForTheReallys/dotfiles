@@ -1,4 +1,4 @@
-TMUX_SCRIPT_DIR=$HOME/.tmux/scripts
+TMUX_SCRIPT_DIR=$HOME/.config/tmux/scripts
 run-shell "tmux set-env -g TMUX_VERSION $(tmux -V | cut -d' ' -f2)"
 
 set -g default-terminal tmux-256color
