@@ -23,5 +23,11 @@ opt.wrap = false
 opt.foldmethod = "indent"
 opt.foldenable = false
 
+-- Neovide settings
+local g = vim.g
+g.neovide_cursor_animation_length = 0
+g.neovide_scroll_animation_length = 0
+g.neovide_position_animation_length = 0
+
 -- This is set in archlinux to y$.  Have to override this here
 -- vim.api.nvim_del_keymap('n', 'Y')
