@@ -1,0 +1,9 @@
+# Modes
+
+mode Insert {
+    bindsym --inhibited $Alt+Escape mode "default"
+}
+
+bindsym --inhibited $Alt+i mode Insert
+
+# vim: set filetype=conf:

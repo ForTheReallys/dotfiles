@@ -4,10 +4,10 @@
 bindsym $Alt+q kill
 
 # change focus
-bindsym $Alt+$left focus left
-bindsym $Alt+$down focus down
-bindsym $Alt+$up focus up
-bindsym $Alt+$right focus right
+bindsym --inhibited $Alt+$left focus left
+bindsym --inhibited $Alt+$down focus down
+bindsym --inhibited $Alt+$up focus up
+bindsym --inhibited $Alt+$right focus right
 
 # move focused window
 bindsym $Alt+Shift+$left move left

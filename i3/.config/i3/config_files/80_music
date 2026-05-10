@@ -1,0 +1,22 @@
+# music keybindings
+
+# set $player cmus
+
+# otherwise
+bindsym XF86AudioPlay exec playerctl play-pause  # -p $player
+bindsym XF86AudioStop exec playerctl stop        # -p $player
+bindsym XF86AudioNext exec playerctl next        # -p $player
+bindsym XF86AudioPrev exec playerctl previous    # -p $player
+
+# uninhibitied bindings
+bindsym --inhibited Shift+XF86AudioPlay exec playerctl play-pause  # -p $player
+bindsym --inhibited Shift+XF86AudioStop exec playerctl stop        # -p $player
+bindsym --inhibited Shift+XF86AudioNext exec playerctl next        # -p $player
+bindsym --inhibited Shift+XF86AudioPrev exec playerctl previous    # -p $player
+
+# volume
+bindsym Shift+XF86AudioRaiseVolume exec playerctl  volume .05+  # -p $player
+bindsym Shift+XF86AudioLowerVolume exec playerctl  volume .05-  # -p $player
+
+bindsym $Alt+m [title="^Music$"] scratchpad show ; move position center
+
