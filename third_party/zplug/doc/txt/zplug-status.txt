@@ -1,0 +1,89 @@
+zplug-status(1)
+===============
+Masaki Ishiyama b4b4r07@gmail.com
+:man manual: ZPLUG Manual
+
+NAME
+----
+zplug-status - Check if the remote repositories are up to date
+
+
+SYNOPSIS
+--------
+[verse]
+'zplug status' [--select] ['"username/reponame"']
+
+    The word 'package' refers to the string in the format: "username/reponame".
+
+
+DESCRIPTION
+-----------
+Check if the remote repositories are up to date.
+
+
+OPTIONS
+-------
+*--verbose*::
+    Be verbose.
+
+
+EXAMPLES
+--------
+
+Check if the package is up to date:
+
+------------
+$ zplug status
+Fetching the status of packages ...
+Packages with from:'local' are skipped.
+===
+babarot/emoji-cli                       (up to date) 'https://github.com/babarot/emoji-cli.git'
+babarot/zsh-vimode-visual               (up to date) 'https://github.com/babarot/zsh-vimode-visual.git'
+babarot/http_code                       (up to date) 'https://github.com/babarot/http_code.git'
+babarot/zsh-gomi                        (up to date) 'https://github.com/babarot/zsh-gomi.git'
+zplug/zplug                           (local out of date) 'https://github.com/zplug/zplug.git'
+so-fancy/diff-so-fancy                  (local out of date) 'https://github.com/so-fancy/diff-so-fancy.git'
+zsh-users/zaw                           (up to date) 'https://github.com/zsh-users/zaw.git'
+stedolan/jq                             (up to date) 'https://github.com/stedolan/jq/releases'
+peco/peco                               (up to date) 'https://github.com/peco/peco/releases'
+junegunn/fzf-bin                        (local out of date) 'https://github.com/junegunn/fzf-bin/releases'
+babarot/zgit                            (up to date) 'https://github.com/babarot/zgit.git'
+Jxck/dotfiles                           (local out of date) 'https://github.com/Jxck/dotfiles.git'
+mrowa44/emojify                         (up to date) 'https://github.com/mrowa44/emojify.git'
+===
+Finished 6.323036
+
+------------
+
+
+SEE ALSO
+--------
+*zplug(1)*
+
+
+Further Documentation
+---------------------
+
+See the references in https://github.com/zplug/zplug/wiki[official wiki page] to get started using zplug.
+The wiki may perhaps be overwhelming for first-time users.
+
+
+Authors
+-------
+zplug was originally written by Masaki Ishiyama (a.k.a @babarot).
+Many people have contributed to it.
+
+
+Copying
+-------
+Copyright \(C) 2015-2016 Masaki Ishiyama
+
+MIT License
+
+
+Reporting Bugs
+--------------
+Report bugs to the https://github.com/zplug/zplug/issues[zplug issues]
+
+
+// vim:ft=asciidoc
