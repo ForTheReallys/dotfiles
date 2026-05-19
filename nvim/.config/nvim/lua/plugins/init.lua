@@ -20,7 +20,7 @@ return {
 
   {
     "github/copilot.vim",
-    lazy = false,
+    lazy = true,
     config = function()
       -- Mapping tab is already used by NvChad
       vim.g.copilot_no_tab_map = true;
@@ -36,7 +36,7 @@ return {
 
     {
       "CopilotC-Nvim/CopilotChat.nvim",
-      lazy = false,
+      lazy = true,
       -- branch = "v1",
       dependencies = {
         { "nvim-lua/plenary.nvim" }, -- Required for CopilotChat.nvim
