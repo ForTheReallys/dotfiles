@@ -10,7 +10,6 @@ zplug load
 
 source ~/dotfiles/fzf-git.sh/fzf-git.sh
 
-[ -r ~/.environment ] && . ~/.environment
 [ -r ~/.shell/common/aliases ] && . ~/.shell/common/aliases
 
 # load any private configurations (not shared in my dotfiles)
