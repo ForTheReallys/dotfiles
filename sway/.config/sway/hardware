@@ -1,7 +1,6 @@
 # set $left_output "Unknown ASUS VP249 0x0000B328"
-set $left_output "ASUSTek COMPUTER INC ASUS VP249 0x0000B328"
+set $left_output "ASUSTek COMPUTER INC ASUS VP249 0x0002B328"
 set $main_output "Dell Inc. DELL S2522HG 75RJ1C3"
-set $vfio_output "HDMI-A-1"
 
 bindsym Shift+$Alt+f fullscreen toggle global
 
@@ -14,8 +13,6 @@ output $main_output {
 	position 1920 0
 	mode 1920x1080@240Hz
 }
-
-output $vfio_output disable
 
 input * accel_profile flat
 
